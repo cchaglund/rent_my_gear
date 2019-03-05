@@ -11,21 +11,13 @@
     <!-- Font awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <title>Hello, world!</title>
+    <title>@yield('title', 'Rent My Gear')</title>
   </head>
   <body>
     
     @include('layouts/nav')
-    <div class="main">
-      @yield('content')
-    </div>
-    <style>
-    .main {
-        margin-left: 200px; /* Same as the width of the sidenav */
-        font-size: 20px; /* Increased text to enable scrolling */
-        padding: 0px 10px;
-    }
-    </style>
+    @yield('content')
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
