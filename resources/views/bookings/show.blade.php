@@ -1,12 +1,12 @@
 @extends('layouts/app')
 
 @section('content')
-@include('layouts/categorymenu')
-@foreach($products as $product)
-	<div class="container productbox">
+    @include('layouts/categorymenu')
+    <div class="container productbox">
         <div class="card productpadding">
             <div class="container-fliud">
                 <div class="wrapper row">
+                    <h1>Gör din bokning!</h1>
                     <div class="preview col-md-6">
                         
                         <div class="preview-pic tab-content">
@@ -42,30 +42,22 @@
                         </h5>
                         <h5 class="colors">colors:
                         </h5>
-                        <div class="action">
-                            <a href="/bookings/{{ $product->id }}"><button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button></a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @endforeach
 @endsection
 <style>
-    img {
-    width: 100%;
-    height: 400px;
-}
-.productbox{
-      display: inline-flex!important;
-      flex-direction: column;
-      margin-left:14%!important;
-      margin-bottom:10px;
-  }
-   .productpadding{
-  background-color: gray;
-  padding: 3em;
-  line-height: 1.5em
-  }
+    .productbox{
+        display: inline-flex!important;
+        flex-direction: column;
+        margin-left:14%!important;
+        margin-bottom:10px;
+    }
+    .productpadding{
+        background-color: gray;
+        padding: 3em;
+        line-height: 1.5em
+    }
 </style>

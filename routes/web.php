@@ -18,3 +18,4 @@ Route::get('/', function () {
 // Route::get('/products', 'ProductController@index');
 Route::resource('/categories', 'CategoryController');
 Route::resource('/products', 'ProductController');
+Route::resource('/bookings', 'BookingController');
