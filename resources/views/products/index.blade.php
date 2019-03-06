@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-@include('layouts/categorymeny')
+@include('layouts/categorymenu')
 @foreach($products as $product)
 	<div class="container productbox">
         <div class="card productpadding">

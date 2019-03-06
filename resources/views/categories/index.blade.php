@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
 @section('content')
-    @include('layouts/categorymeny')
+    @include('layouts/categorymenu')
 
 @endsection
