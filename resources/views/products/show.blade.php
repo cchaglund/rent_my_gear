@@ -1,5 +1,6 @@
 @extends('layouts/app')
 @section('content')
+    @include('layouts/categorymenu')
         <div class="container productbox">
         <div class="card productpadding">
             <div class="container-fliud">
@@ -68,7 +69,7 @@ img {
 .productbox{
       display: inline-flex!important;
       width:100%;
-      margin-left:20%;
+      margin-left:14%!important;
   }
   .productpadding{
   background-color: gray;
