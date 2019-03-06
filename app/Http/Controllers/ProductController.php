@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Auth;
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        $products = Product::all();
+        
+        return view('products/index', ['products' => $products, 'categories' => $categories]);
     }
 
     /**
@@ -24,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products/create');
     }
 
     /**
@@ -35,7 +40,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+		// $product->user_id = Auth::user()->id;
+		$product->name = $request->name;
+		$product->desc = $request->desc;
+		$product->price = $request->price;
+		$product->rented_to = $request->rented_to;
+		$product->save();
+		return redirect('/products/' . $product->id);
     }
 
     /**
@@ -46,7 +58,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('products/show', ['product' => $product, 'categories' => $categories]);
     }
 
     /**
