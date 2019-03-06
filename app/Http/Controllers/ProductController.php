@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products/create');
     }
 
     /**
@@ -36,7 +36,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+		$product->name = $request->name;
+		$product->desc = $request->desc;
+		$product->price = $request->price;
+		$product->rented_to = $request->rented_to;
+		$product->save();
+		return redirect('/products/' . $product->id);
     }
 
     /**
