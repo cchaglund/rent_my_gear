@@ -1,14 +1,13 @@
 <?php
 
 namespace App;
-
 use App\User;
 use App\Image;
 use App\Category;
-use App\Booking;
+use App\Product;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Booking extends Model
 {
     public function user() {
         return $this->belongsTo(User::class);
@@ -18,10 +17,7 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
-    public function categories() {
-        return $this->belongsToMany(Category::class);
-    }
-    public function booking() {
-        return $this->belongsTo(Booking::class);
+    public function products() {
+        return $this->belongsToMany(Product::class);
     }
 }
