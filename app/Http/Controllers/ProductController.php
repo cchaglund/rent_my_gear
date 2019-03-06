@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $products = Product::all();
-		return view('products/index', ['products' => $products]);
+        return view('products/index', ['products' => $products, 'categories' => $categories]);
     }
 
     /**
@@ -53,7 +55,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products/show', ['product' => $product]);
+        $categories = Category::all();
+        return view('products/show', ['product' => $product, 'categories' => $categories]);
     }
 
     /**
