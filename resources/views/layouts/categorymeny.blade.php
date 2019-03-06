@@ -1,4 +1,4 @@
-<h1>All Categories</h1>
+<h2>Categories</h2>
 <div class="navwidth">
     <div class="accordion" id="accordionExample">
         @foreach($categories as $category)
@@ -37,12 +37,16 @@
     </div>
 </div>
 <style>
-h1{
+h2{
     margin-left:10px;
 }
 .navwidth{
-    width:20%;  
+    display: inline-flex; 
     margin-left:10px;
+    vertical-align: top;
+}
+h2.mb-0{
+    width:150px;
 }
 .card-header, .card-body{
     padding:0px!important;

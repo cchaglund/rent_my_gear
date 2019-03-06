@@ -1,7 +1,7 @@
 @extends('layouts/app')
 @section('content')
-        <div class="container">
-        <div class="card">
+        <div class="container productbox">
+        <div class="card productpadding">
             <div class="container-fliud">
                 <div class="wrapper row">
                     <div class="preview col-md-6">
@@ -52,7 +52,7 @@
 <style>
 img {
     width: 550px;
-    height: 600px;
+    height: 400px;
 }
 .preview {
   display: -webkit-box;
@@ -65,6 +65,15 @@ img {
       -ms-flex-direction: column;
           flex-direction: column; 
 }
+.productbox{
+      display: inline-flex!important;
+      width:100%;
+  }
+  .productpadding{
+  background-color: gray;
+  padding: 3em;
+  line-height: 1.5em
+  }
 @media screen and (max-width: 996px) {
     .preview {
       margin-bottom: 20px; 
@@ -96,9 +105,9 @@ img {
             animation-name: opacity;
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
-.card {
+/* .card {
   margin-top: 50px;
   background-color: gray;
-  padding: 3em;
-  line-height: 1.5em; }
+  /*padding: 3em;
+  line-height: 1.5em; } */
 </style>
