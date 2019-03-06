@@ -5,30 +5,28 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#{{ $category->name }}" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#category-{{ $category->id }}" aria-expanded="true" aria-controls="collapseOne">
                                     {{ $category->name }}
                         </button>
                     </h2>
                 </div>
                 <div class="accordion" id="accordionExampleone">
-                    <div id="{{ $category->name }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="category-{{ $category->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             @foreach($category->products as $product)
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#{{ $product->name }}" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#product-{{ $product->id }}" aria-expanded="true" aria-controls="collapseOne">
                                                 -{{ $product->name }}
                                         </button>
                                     </h2>
                                 </div>
-                            @endforeach
-                            <div id="{{ $product->name }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExampleone">
-                                <div class="card-body">
-                                    @foreach($category->products as $product)
+                                <div id="product-{{ $product->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExampleone">
+                                    <div class="card-body">
                                         <a class="nav-link my-1" href="/products/{{ $product->id }}">{{ $product->id }} {{ $product->name }}</a>
-                                    @endforeach
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

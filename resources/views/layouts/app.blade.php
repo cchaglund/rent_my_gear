@@ -16,7 +16,6 @@
   <body>
     
     @include('layouts/nav')
-    @include('layouts/categorymeny')
     @yield('content')
     
 
