@@ -31,19 +31,23 @@
                         </div>
                         <hr>
                         
-                        <h4 class="price">current price: <span>${{ $product->price }}</span></h4>
-                        <h5 class="sizes">Time to rent:
-                            <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                            <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
+                        <h4 class="price">Current Price: <span>${{ $product->price }}</span></h4>
+                        <form>
+                    
+                        <h5 class="sizes">Rent Time:
+                        <select class="custom-select  col-sm-5 mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choose Your Rent Time</option>
+                            <option value="1">One Week</option>
+                            <option value="2">Two Weeks</option>
+                            <option value="3">Three Weeks</option>
+                            <option value="4">Four Weeks</option>
+                        </select>
                         </h5>
-                        <h5 class="colors">colors:
-                        </h5>
+                        </form>
                         <div class="action">
-                            <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
+                            <button class="add-to-cart btn btn-outline-secondary" type="submit">Rent It Now!</button>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -87,29 +91,36 @@ img {
           flex-grow: 1; }
 .preview-thumbnail.nav-tabs {
   border: none;
-  margin-top: 15px; }
+  margin-top: 15px; 
+  }
+
   .preview-thumbnail.nav-tabs li {
     width: 18%;
-    margin-right: 2.5%; }
+    margin-right: 2.5%;
+    }
+
     .preview-thumbnail.nav-tabs li img {
       max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
+      display: block;
+      }
+
+.preview-thumbnail.nav-tabs li a {
+padding: 0;
+margin: 0;
+}
+
+.preview-thumbnail.nav-tabs li:last-of-type {
+margin-right: 0;
+}
+
 .tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
-/* .card {
-  margin-top: 50px;
-  background-color: gray;
-  /*padding: 3em;
-  line-height: 1.5em; } */
+overflow: hidden;
+}
+
+.tab-content img {
+width: 100%;
+-webkit-animation-name: opacity;
+animation-name: opacity;
+-webkit-animation-duration: .3s;
+animation-duration: .3s; }
 </style>
