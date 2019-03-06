@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('desc');
             $table->float('price', 8, 2);
+            $table->text('src');
             $table->bigInteger('rented_to')->unsigned();
             $table->timestamps();
         });
