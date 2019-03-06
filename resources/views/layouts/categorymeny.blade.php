@@ -42,6 +42,7 @@ h2{
     display: inline-flex; 
     margin-left:10px;
     vertical-align: top;
+    position:fixed;
 }
 h2.mb-0{
     width:150px;

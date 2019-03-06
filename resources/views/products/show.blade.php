@@ -68,6 +68,7 @@ img {
 .productbox{
       display: inline-flex!important;
       width:100%;
+      margin-left:20%;
   }
   .productpadding{
   background-color: gray;
