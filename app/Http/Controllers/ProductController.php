@@ -14,6 +14,11 @@ class ProductController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    protected $validation_rules = [
+		'name' => 'required|min:5',
+		'desc' => 'required|min:30'
+	];
+
     /**
      * Display a listing of the resource.
      *
@@ -46,12 +51,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validData = $request->validate($this->validation_rules);
+
         $product = new Product();
 		$product->user_id = Auth::user()->id;
-		$product->name = $request->name;
-		$product->desc = $request->desc;
+		$product->name = $validData['name'];
+		$product->desc = $validData['desc'];
 		$product->price = $request->price;
-		$product->src = $request->src;
+        $product->src = $request->src;
 		$product->save();
         return redirect('/products/' . $product->id)->with('status', 'Product added successfully!');
     }

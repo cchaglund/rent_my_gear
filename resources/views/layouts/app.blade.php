@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel position-fixed" style="z-index: 1000; left: 0; right: 0;">
             <div class="container">
                 <a class="navbar-brand" href="/">Rent My Gear</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -32,7 +32,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="/categories">Categories</a>
+                        <a class="nav-link" href="/products">Products</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/products/create">Rent Out</a>
@@ -75,7 +75,7 @@
             </div>
         </nav>
     </div> 
-    <main>
+    <main style="padding-top: 55px;">
       @yield('content')
     </main>
 </body>

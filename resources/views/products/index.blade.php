@@ -2,59 +2,55 @@
 
 @section('content')
 @include('layouts/categorymenu')
-@foreach($products as $product)
-	<div class="container productbox">
-        <div class="card productpadding">
-            <div class="container-fliud">
-                <div class="wrapper row">
-                    <div class="preview col-md-6">
-                        
-                        <div class="preview-pic tab-content">
-                          <div class="tab-pane active" id="pic-1"><img src="{{ $product->src }}" /></div>
-                        </div>
-                        
-                    </div>
-                    <div class="details col-md-6">
-                        <h3 class="product-title">{{ $product->name }}</h3>
-                        <hr>
-                        <div class="rating">
-                            <p class="product-description">{{ $product->desc }}</p>
-                        </div>
-                        <hr>
-                        
-                        <h4 class="price">current price: <span>${{ $product->price }}</span></h4>
-                        <h5 class="sizes">Time to rent:
-                            <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                            <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
-                        </h5>
-                        <h5 class="colors">colors:
-                        </h5>
-                        <div class="action">
-                            <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
-                        </div>
-                    </div>
-                </div>
+
+  <div class="product-box">
+    @foreach ($products as $product)
+        <div class="product-item">
+            <img src="{{ $product->src }}" alt="{{ $product->name }}" width="100%">
+            <div class="product-info">
+                <a href="/products/{{ $product->id }}" class="nav-link name">{{ $product->name }}</a>
             </div>
         </div>
-    </div>
     @endforeach
+  </div>
+
+
+  <style>
+    .product-box {
+        display: flex;
+        padding-left: 200px;
+        flex-wrap: wrap;
+        margin: 15px;
+    }
+
+    .product-box .product-item {
+        background-color: #fff;
+        width: 324px;
+        height: 576px;
+        position: relative;
+        box-shadow: 0 0 4px rgba(0,0,0,.04);
+        margin: 15px;
+    }
+
+    .product-box .product-item .product-info {
+        background-color: #fff;
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    .product-box .product-item .product-info .name {
+        padding: 5px;
+        flex: 1;
+    }
+
+    .product-box .product-item .product-info .price {
+        text-align: right;
+        padding: 5px;
+    }
+
+  </style>
 @endsection
-<style>
-    img {
-    width: 100%;
-    height: 400px;
-}
-.productbox{
-      display: inline-flex!important;
-      flex-direction: column;
-      margin-left:14%!important;
-      margin-bottom:10px;
-  }
-   .productpadding{
-  background-color: gray;
-  padding: 3em;
-  line-height: 1.5em
-  }
-</style>
