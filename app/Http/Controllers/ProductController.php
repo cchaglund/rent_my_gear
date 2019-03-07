@@ -53,7 +53,7 @@ class ProductController extends Controller
 		$product->price = $request->price;
 		$product->src = $request->src;
 		$product->save();
-		return redirect('/products/' . $product->id);
+        return redirect('/products/' . $product->id)->with('status', 'Product added successfully!');
     }
 
     /**
