@@ -8,19 +8,8 @@
                     <div class="preview col-md-6">
                         
                         <div class="preview-pic tab-content">
-                          <div class="tab-pane active" id="pic-1"><img src="https://sqeeqee.com/static/uploads/photos/2015/11/01/10/56/fa1cbe34ecea6c3df0352059010e64a5.gif" /></div>
-                          <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                          <div class="tab-pane active" id="pic-1"><img src="{{ $product->src }}" /></div>
                         </div>
-                        {{--  <ul class="preview-thumbnail nav nav-tabs">
-                          <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        </ul>  --}}
                         
                     </div>
                     <div class="details col-md-6">
