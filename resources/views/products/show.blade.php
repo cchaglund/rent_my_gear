@@ -27,43 +27,117 @@
                             </a>
                         </p>
                         <div class="collapse" id="collapseExample">
-                            <div class="card card-body">
-                                <form action="" class="productpadding" method="POST">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Name:</label>
-                                        <input type="text" class="form-control"  name="name" id="exampleFormControlInput1" placeholder="ex: Sten Svensson">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Email address</label>
-                                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Phone:</label>
-                                        <input type="text" class="form-control"  name="phone" id="exampleFormControlInput1" placeholder="Number">
-                                    </div>
-                                    <div class="flex">
-                                        <div class="form-group citybar">
-                                            <label for="exampleFormControlInput1">City</label>
-                                            <input type="text" class="form-control" name="city" id="exampleFormControlInput1" placeholder="ex: Lund">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlInput1">Address</label>
-                                            <input type="text" class="form-control" name="address" id="exampleFormControlInput1" placeholder="ex: Stora Gatan 5">
+                            <div class="card-body">
+                                <form method="POST" action="/products">
+                                    @csrf
+
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                            @if ($errors->has('name'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Start Date:</label>
-                                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="ex: 2019-03-08">
-                                    </div>  
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">End Date:</label>
-                                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="ex: 2019-03-09">
-                                    </div>  
+
+                                    <div class="form-group row">
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+
+                                            @if ($errors->has('phone'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('phone') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required>
+
+                                            @if ($errors->has('city'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('city') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+
+                                            @if ($errors->has('address'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('address') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="startdate" class="col-md-4 col-form-label text-md-right">{{ __('Start Date') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="startdate" type="date" class="form-control{{ $errors->has('startdate') ? ' is-invalid' : '' }}" name="startdate" value="{{ old('startdate') }}" required>
+
+                                            @if ($errors->has('startdate'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('startdate') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="enddate" class="col-md-4 col-form-label text-md-right">{{ __('End Date') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="enddate" type="date" class="form-control{{ $errors->has('enddate') ? ' is-invalid' : '' }}" name="enddate" value="{{ old('enddate') }}" required>
+
+                                            @if ($errors->has('enddate'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('enddate') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div>
                                         <p class="price">total price: <span>${{ $product->price }}</span></p>
                                     </div>
-                                    <div class="action">
-                                        <input type="submit" class="add-to-cart btn btn-outline-secondary" value="Rent It Now!">
+
+                                    <div class="form-group row mb-0">
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="add-to-cart btn btn-outline-secondary">
+                                                {{ __('Rent It Now!') }}
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -105,6 +179,9 @@ img {
   }
   .citybar{
       margin-right:30px; /*30px*/
+  }
+  p.price{
+      text-align: center!important;
   }
 @media screen and (max-width: 996px) {
     .preview {
