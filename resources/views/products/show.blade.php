@@ -21,16 +21,52 @@
                         <hr>
                         
                         <h4 class="price">current price: <span>${{ $product->price }}</span></h4>
-                        <h5 class="sizes">Time to rent:
-                            <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                            <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
-                        </h5>
-                        <h5 class="colors">colors:
-                        </h5>
-                        <div class="action">
-                            <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
+                        <p>
+                            <a class="add-to-cart btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Start Booking
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <form class="productpadding" method="POST">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Name:</label>
+                                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="ex: Sten Svensson">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Phone:</label>
+                                        <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="Number">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-group citybar">
+                                            <label for="exampleFormControlInput1">City</label>
+                                            <input type="city" class="form-control" id="exampleFormControlInput1" placeholder="ex: Lund">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Address</label>
+                                            <input type="address" class="form-control" id="exampleFormControlInput1" placeholder="ex: Stora Gatan 5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Start Date:</label>
+                                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="ex: 2019-03-08">
+                                    </div>  
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">End Date:</label>
+                                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="ex: 2019-03-09">
+                                    </div>  
+                                    <div>
+                                        <p class="price">total price: <span>${{ $product->price }}</span></p>
+                                    </div>
+                                    <div class="action">
+                                        <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -40,6 +76,9 @@
 @endsection
 
 <style>
+    .flex{
+        display:inline-flex;
+    }
 img {
     width: 550px;
     height: 400px;
@@ -61,9 +100,11 @@ img {
       margin-left:14%!important;
   }
   .productpadding{
-  background-color: gray;
   padding: 3em;
   line-height: 1.5em
+  }
+  .citybar{
+      margin-right:30px; /*30px*/
   }
 @media screen and (max-width: 996px) {
     .preview {
