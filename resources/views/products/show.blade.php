@@ -28,27 +28,27 @@
                         </p>
                         <div class="collapse" id="collapseExample">
                             <div class="card card-body">
-                                <form class="productpadding" method="POST">
+                                <form action="" class="productpadding" method="POST">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Name:</label>
-                                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="ex: Sten Svensson">
+                                        <input type="text" class="form-control"  name="name" id="exampleFormControlInput1" placeholder="ex: Sten Svensson">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Phone:</label>
-                                        <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="Number">
+                                        <input type="text" class="form-control"  name="phone" id="exampleFormControlInput1" placeholder="Number">
                                     </div>
                                     <div class="flex">
                                         <div class="form-group citybar">
                                             <label for="exampleFormControlInput1">City</label>
-                                            <input type="city" class="form-control" id="exampleFormControlInput1" placeholder="ex: Lund">
+                                            <input type="text" class="form-control" name="city" id="exampleFormControlInput1" placeholder="ex: Lund">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">Address</label>
-                                            <input type="address" class="form-control" id="exampleFormControlInput1" placeholder="ex: Stora Gatan 5">
+                                            <input type="text" class="form-control" name="address" id="exampleFormControlInput1" placeholder="ex: Stora Gatan 5">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -63,7 +63,7 @@
                                         <p class="price">total price: <span>${{ $product->price }}</span></p>
                                     </div>
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
+                                        <input type="submit" class="add-to-cart btn btn-outline-secondary" value="Rent It Now!">
                                     </div>
                                 </form>
                             </div>
