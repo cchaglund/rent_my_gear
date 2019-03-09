@@ -11,10 +11,15 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/products', 'ProductController@index');
 Route::resource('/categories', 'CategoryController');
+
+/** Products */
 Route::resource('/products', 'ProductController');
+
+Route::get('/home', 'HomeController@index')->name('home');

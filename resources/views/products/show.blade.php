@@ -8,19 +8,8 @@
                     <div class="preview col-md-6">
                         
                         <div class="preview-pic tab-content">
-                          <div class="tab-pane active" id="pic-1"><img src="https://sqeeqee.com/static/uploads/photos/2015/11/01/10/56/fa1cbe34ecea6c3df0352059010e64a5.gif" /></div>
-                          <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                          <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                          <div class="tab-pane active" id="pic-1"><img src="{{ $product->src }}" /></div>
                         </div>
-                        {{--  <ul class="preview-thumbnail nav nav-tabs">
-                          <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                          <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        </ul>  --}}
                         
                     </div>
                     <div class="details col-md-6">
@@ -32,16 +21,126 @@
                         <hr>
                         
                         <h4 class="price">current price: <span>${{ $product->price }}</span></h4>
-                        <h5 class="sizes">Time to rent:
-                            <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                            <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                            <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
-                        </h5>
-                        <h5 class="colors">colors:
-                        </h5>
-                        <div class="action">
-                            <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
+                        <p>
+                            <a class="add-to-cart btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Start Booking
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card-body">
+                                <form method="POST" action="/products">
+                                    @csrf
+
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                            @if ($errors->has('name'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+
+                                            @if ($errors->has('phone'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('phone') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required>
+
+                                            @if ($errors->has('city'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('city') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+
+                                            @if ($errors->has('address'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('address') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="startdate" class="col-md-4 col-form-label text-md-right">{{ __('Start Date') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="startdate" type="date" class="form-control{{ $errors->has('startdate') ? ' is-invalid' : '' }}" name="startdate" value="{{ old('startdate') }}" required>
+
+                                            @if ($errors->has('startdate'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('startdate') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="enddate" class="col-md-4 col-form-label text-md-right">{{ __('End Date') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="enddate" type="date" class="form-control{{ $errors->has('enddate') ? ' is-invalid' : '' }}" name="enddate" value="{{ old('enddate') }}" required>
+
+                                            @if ($errors->has('enddate'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('enddate') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="price">total price: <span>${{ $product->price }}</span></p>
+                                    </div>
+
+                                    <div class="form-group row mb-0">
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="add-to-cart btn btn-outline-secondary">
+                                                {{ __('Rent It Now!') }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -51,6 +150,9 @@
 @endsection
 
 <style>
+    .flex{
+        display:inline-flex;
+    }
 img {
     width: 550px;
     height: 400px;
@@ -72,9 +174,14 @@ img {
       margin-left:14%!important;
   }
   .productpadding{
-  background-color: gray;
   padding: 3em;
   line-height: 1.5em
+  }
+  .citybar{
+      margin-right:30px; /*30px*/
+  }
+  p.price{
+      text-align: center!important;
   }
 @media screen and (max-width: 996px) {
     .preview {
