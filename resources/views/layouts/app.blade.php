@@ -16,7 +16,11 @@
   <body>
     
     @include('layouts/nav')
-    @yield('content')
+    
+    <div class="d-flex">
+      @yield('content')  
+    </div>
+    
     
 
     <!-- Optional JavaScript -->

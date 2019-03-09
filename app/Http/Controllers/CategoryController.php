@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    protected $list = [];
     /**
      * Display a listing of the resource.
      *
@@ -24,16 +23,6 @@ class CategoryController extends Controller
         // dd($this->list);
 
 		return view('categories/index', ['categories' => $categories]);
-    }
-
-    public function categories_recursive($categories)
-    {
-        foreach ($categories as $category) {
-            $this->list[] = $category->name;
-            if ( $category->has_sub_category() == true ) {
-                $this->categories_recursive($category->child_categories());
-            }
-        }
     }
 
     /**
@@ -65,10 +54,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        $categories = Category::where('parent_id', '=', 0)->get();
         $products = $category->products;
         return view('categories/show', [
             'products' => $products,
-            'category' => $category
+            'category' => $category,
+            'categories' => $categories
         ]);
     }
 
