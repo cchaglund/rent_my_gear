@@ -21,5 +21,5 @@ Route::resource('/categories', 'CategoryController');
 
 /** Products */
 Route::resource('/products', 'ProductController');
-
+Route::resource('/bookings', 'BookingController');
 Route::get('/home', 'HomeController@index')->name('home');

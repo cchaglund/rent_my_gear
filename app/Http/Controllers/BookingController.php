@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Category;
+use App\Product;
 use App\Booking;
 use Illuminate\Http\Request;
 
@@ -24,7 +27,9 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $products = Product::all();
+        return view('bookings/create', ['categories' => $categories, 'products' => $products]);
     }
 
     /**
@@ -35,7 +40,17 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booking = new Booking();
+		$booking->user_id = Auth::user()->id;
+		$booking->name = $request->name;
+		$booking->email = $request->email;
+		$booking->phone = $request->phone;
+        $booking->city = $request->city;
+        $booking->address = $request->address;
+        $booking->start_date = $request->start_date;
+        $booking->end_date = $request->end_date;
+		$booking->save();
+		return redirect('/products/' . $booking->id);
     }
 
     /**

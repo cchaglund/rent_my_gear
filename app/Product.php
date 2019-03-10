@@ -4,7 +4,7 @@ namespace App;
 
 use App\User;
 use App\Image;
-use App\Categoty;
+use App\Category;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model

@@ -102,28 +102,28 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="startdate" class="col-md-4 col-form-label text-md-right">{{ __('Start Date') }}</label>
+                                        <label for="start_date" class="col-md-4 col-form-label text-md-right">{{ __('Start Date') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="startdate" type="date" class="form-control{{ $errors->has('startdate') ? ' is-invalid' : '' }}" name="startdate" value="{{ old('startdate') }}" required>
+                                            <input id="start_date" type="date" class="form-control{{ $errors->has('start_date') ? ' is-invalid' : '' }}" name="start_date" value="{{ old('start_date') }}" required>
 
-                                            @if ($errors->has('startdate'))
+                                            @if ($errors->has('start_date'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('startdate') }}</strong>
+                                                    <strong>{{ $errors->first('start_date') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="enddate" class="col-md-4 col-form-label text-md-right">{{ __('End Date') }}</label>
+                                        <label for="end_date" class="col-md-4 col-form-label text-md-right">{{ __('End Date') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="enddate" type="date" class="form-control{{ $errors->has('enddate') ? ' is-invalid' : '' }}" name="enddate" value="{{ old('enddate') }}" required>
+                                            <input id="end_date" type="date" class="form-control{{ $errors->has('end_date') ? ' is-invalid' : '' }}" name="end_date" value="{{ old('end_date') }}" required>
 
-                                            @if ($errors->has('enddate'))
+                                            @if ($errors->has('end_date'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('enddate') }}</strong>
+                                                    <strong>{{ $errors->first('end_date') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
