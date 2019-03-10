@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class CategoryController extends Controller
@@ -16,13 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::where('parent_id', '=', 0)->get();
-        
-        // $this->categories_recursive($categories);
-
-        // dd($this->list);
-
-		return view('categories/index', ['categories' => $categories]);
+		return view('categories/index');
     }
 
     /**
@@ -54,12 +49,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $categories = Category::where('parent_id', '=', 0)->get();
+        $user = Auth::user();
         $products = $category->products;
         return view('categories/show', [
+            'user' => $user,
             'products' => $products,
-            'category' => $category,
-            'categories' => $categories
+            'category' => $category
         ]);
     }
 

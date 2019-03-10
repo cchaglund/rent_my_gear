@@ -21,10 +21,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
         $products = Product::all();
+        $user = Auth::user();
         
-        return view('products/index', ['products' => $products, 'categories' => $categories]);
+        return view('products/index', [
+            'products' => $products,
+            'user' => $user
+        ]);
     }
 
     /**
@@ -34,8 +37,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('products/create', ['categories' => $categories]);
+        return view('products/create');
     }
 
     /**
@@ -64,8 +66,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $categories = Category::all();
-        return view('products/show', ['product' => $product, 'categories' => $categories]);
+        $user = Auth::user();
+
+        return view('products/show', [
+            'product' => $product,
+            'user' => $user
+        ]);
     }
 
     /**
@@ -76,7 +82,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return "Edit page";
     }
 
     /**

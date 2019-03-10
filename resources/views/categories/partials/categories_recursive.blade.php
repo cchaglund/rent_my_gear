@@ -16,9 +16,6 @@
 	@endif
 </div>
 
-<style>
-
-</style>
 
 
 {{-- <li><a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
