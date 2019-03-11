@@ -36,7 +36,7 @@
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ $user->name }}" name="name" value="{{ $user->name }}" required autofocus>
+                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->name : ''}}" name="name" value="{{ isset($user) ? $user->name : ''}}" required autofocus>
 
                                             @if ($errors->has('name'))
                                                 <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ $user->email }}" name="email" value="{{ $user->email }}" required>
+                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->email : ''}}" name="email" value="{{ isset($user) ? $user->email : ''}}" required>
 
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                                         <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ $user->phone }}" name="phone" value="{{ $user->phone }}" required>
+                                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->phone : ''}}" name="phone" value="{{ isset($user) ? $user->name : ''}}" required>
 
                                             @if ($errors->has('phone'))
                                                 <span class="invalid-feedback" role="alert">
@@ -78,7 +78,7 @@
                                         <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" placeholder="{{ $user->city }}" name="city" value="{{ $user->city }}" required>
+                                            <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->city : ''}}" name="city" value="{{ isset($user) ? $user->city : ''}}" required>
 
                                             @if ($errors->has('city'))
                                                 <span class="invalid-feedback" role="alert">
@@ -92,7 +92,7 @@
                                         <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ $user->address }}" name="address" value="{{ $user->address }}" required>
+                                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->address : ''}}" name="address" value="{{ isset($user) ? $user->address : ''}}" required>
 
                                             @if ($errors->has('address'))
                                                 <span class="invalid-feedback" role="alert">
