@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $user = Auth::user();
+        
+        return view('products/index', [
+            'products' => $products,
+            'user' => $user
+        ]);
     }
 
     /**
@@ -24,7 +37,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products/create');
     }
 
     /**
@@ -35,7 +48,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+		$product->user_id = Auth::user()->id;
+		$product->name = $request->name;
+		$product->desc = $request->desc;
+		$product->price = $request->price;
+		$product->src = $request->src;
+		$product->save();
+		return redirect('/products/' . $product->id);
     }
 
     /**
@@ -46,7 +66,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $user = Auth::user();
+
+        return view('products/show', [
+            'product' => $product,
+            'user' => $user
+        ]);
     }
 
     /**
@@ -57,7 +82,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return "Edit page";
     }
 
     /**
@@ -83,3 +108,4 @@ class ProductController extends Controller
         //
     }
 }
+

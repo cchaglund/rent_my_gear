@@ -2,9 +2,10 @@
 
 namespace App;
 
-use App\User;
-use App\Image;
+use App\Booking;
 use App\Categoty;
+use App\Image;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -19,5 +20,9 @@ class Product extends Model
 
     public function categories() {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function bookings() {
+        return $this->hasMany(Booking::class);
     }
 }

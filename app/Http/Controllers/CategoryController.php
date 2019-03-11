@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CategoryController extends Controller
 {
@@ -14,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+		return view('categories/index');
     }
 
     /**
@@ -46,7 +49,13 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $user = Auth::user();
+        $products = $category->products;
+        return view('categories/show', [
+            'user' => $user,
+            'products' => $products,
+            'category' => $category
+        ]);
     }
 
     /**

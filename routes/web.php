@@ -11,6 +11,19 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/categories', 'CategoryController');
+
+Route::resource('/bookings', 'BookingController');
+
+Route::get('/dashboard', 'DashboardController@index');
+
+/** Products */
+Route::resource('/products', 'ProductController');
+
+Route::get('/home', 'HomeController@index')->name('home');
