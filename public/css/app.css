@@ -10668,7 +10668,7 @@ img {
 .productbox {
   display: inline-flex !important;
   flex-direction: column;
-  margin-left: 14% !important;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -10690,17 +10690,6 @@ img {
 .preview {
   display: flex;
   flex-direction: column;
-}
-
-.productbox {
-  display: inline-flex !important;
-  width: 100%;
-  margin-left: 14% !important;
-}
-
-.productpadding {
-  padding: 3em;
-  line-height: 1.5em;
 }
 
 .citybar {

@@ -20,7 +20,7 @@ img {
 .productbox{
       display: inline-flex!important;
       flex-direction: column;
-      margin-left:14%!important;
+      width:100%;
       margin-bottom:10px;
   }
 .productpadding{
@@ -47,15 +47,6 @@ img {
       -ms-flex-direction: column;
           flex-direction: column; 
 }
-.productbox{
-      display: inline-flex!important;
-      width:100%;
-      margin-left:14%!important;
-  }
-  .productpadding{
-  padding: 3em;
-  line-height: 1.5em
-  }
   .citybar{
       margin-right:30px; /*30px*/
   }
