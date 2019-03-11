@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Booking;
-use App\Categoty;
+use App\Category;
 use App\Image;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
@@ -18,8 +18,8 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
-    public function categories() {
-        return $this->belongsToMany(Category::class);
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 
     public function bookings() {

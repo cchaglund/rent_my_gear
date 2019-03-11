@@ -19,15 +19,8 @@
                             </div>
                             <hr>
                             
-                            <h4 class="price">current price: <span>$@yield('price')</span></h4>
-                            <h5 class="sizes">Time to rent:
-                                <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                                <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                                <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                                <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
-                            </h5>
-                            <h5 class="colors">colors:
-                            </h5>
+                            <h4 class="price">Price per day: <span>$@yield('price')</span></h4>
+                            
                             <div class="action">
                                 <button class="add-to-cart btn btn-outline-secondary" type="button">Rent It Now!</button>
                             </div>

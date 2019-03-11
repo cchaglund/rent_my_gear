@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-	<div class="container mt-3">
+	<div class="container mt-3 widthbox">
 		<h1>Rent Out</h1>
 		@if ($errors->any())
 			<div class="alert alert-danger" role="alert">
@@ -50,3 +50,9 @@
 		<a href="/products">&laquo; Back to all products</a>
 	</div>
 @endsection
+
+<style>
+	.widthbox{
+		width:40vw!important;
+	}
+</style>

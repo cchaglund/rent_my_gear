@@ -1,7 +1,6 @@
 @extends('layouts/app')
 @section('content')
   @include('templates/status')
-  @include('layouts/categorymenu')
     <div class="container productbox">
         <div class="card productpadding">
             <div class="container-fluid">
@@ -20,7 +19,9 @@
                         </div>
                         <hr>
                         
-                        <h4 class="price">current price: <span>${{ $product->price }}</span></h4>
+                        <h4 class="price">Price per day: <span>${{ $product->price }}</span></h4>
+                        <h6><strong>Owner: </strong>{{$product->user->name}}</h6>
+                        <h6><strong>City: </strong>{{$product->user->city}}</h6>
                         <p>
                             <a class="add-to-cart btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 Start Booking
@@ -130,7 +131,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <p class="price">total price: <span>${{ $product->price }}</span></p>
+                                        <p class="price">total price: <span>${{ $product->price }} </span></p>
                                     </div>
 
                                     <div class="form-group row mb-0">
@@ -149,4 +150,3 @@
         </div>
     </div>
 @endsection
-

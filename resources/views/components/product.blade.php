@@ -19,19 +19,16 @@
                             </a>
                             <hr>
                             <div class="rating">
-                                <p class="product-description">{{$product->desc}}</p>
+                                <p class="product-description"><strong>Description: </strong>{{$product->desc}}</p>
                             </div>
                             <hr>
                             
-                            <h4 class="price">current price: <span>${{$product->price}}</span></h4>
-                            <h5 class="sizes">Time to rent:
-                                <span class="size" data-toggle="tooltip" title="oneweek">1 week</span>
-                                <span class="size" data-toggle="tooltip" title="twoweeks">| 2 weeks</span>
-                                <span class="size" data-toggle="tooltip" title="threeweeks">| 3 weeks</span>
-                                <span class="size" data-toggle="tooltip" title="fourweeks">| 4 weeks</span>
-                            </h5>
-                            <h5 class="colors">colors:
-                            </h5>
+                            <h4 class="price">Price per day: <span>${{$product->price}}</span></h4>
+                            <h6><strong>Owner: </strong>{{$product->user->name}}</h6>
+                            <h6><strong>City: </strong>{{$product->user->city}}</h6>
+                            <h6><strong>Categories: </strong>{{$product->category->name}}</h6>
+                            {{-- <h6><strong>Address: </strong>{{$product->user->address}}</h6> --}}
+                            
                             <div class="action">
                                 @if ( isset($user) && $user->id == $product->user_id)
                                     <a href="/products/{{ $product->id }}/edit">
