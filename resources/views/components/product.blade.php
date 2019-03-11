@@ -33,7 +33,7 @@
                             <h5 class="colors">colors:
                             </h5>
                             <div class="action">
-                                @if ( $user->id == $product->user_id )
+                                @if ( isset($user) && $user->id == $product->user_id)
                                     <a href="/products/{{ $product->id }}/edit">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Edit</button>
                                     </a>
