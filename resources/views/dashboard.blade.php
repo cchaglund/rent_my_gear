@@ -5,7 +5,7 @@
         {{ $message }}    
     @endif
     
-    <h3>Renting out</h3>
+    <h3 class="marginl">Renting out</h3>
     @foreach ($rented_out_gear as $booking)
     
         @if ($booking->owner_id == $user->id)
@@ -13,12 +13,12 @@
         @endif
     @endforeach
     
-    <h3>Your loans</h3>
+    <h3 class="marginl">Your loans</h3>
         @foreach ($bookings as $booking)
             @include('components.booking')
         @endforeach
 
-    <h3>All Gear</h3>
+    <h3 class="marginl">All Gear</h3>
     @foreach ($products as $product)
         @include('components.product')
     @endforeach
@@ -45,7 +45,7 @@
     </div> --}}
 
 <style>
-	h3{
-        margin-left:10px;
+	.marginl{
+        margin-left:15px;
     }
 </style>

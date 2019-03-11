@@ -55,4 +55,8 @@
 	.widthbox{
 		width:40vw!important;
 	}
+	@media screen and (max-width: 600px) {
+    .widthbox{
+    	width:100%!important;
+	}	
 </style>

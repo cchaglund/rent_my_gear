@@ -12,11 +12,6 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
-img {
-    width: 100%;
-    height: 400px;
-}
 .productbox{
       display: inline-flex!important;
       flex-direction: column;
@@ -30,11 +25,10 @@ img {
 }
 
     .flex{
-        display:inline-flex;
+        display:flex!important;
     }
 img {
-    width: 550px;
-    height: 400px;
+    width: 100%!important;
 }
 .preview {
   display: -webkit-box;
@@ -49,9 +43,6 @@ img {
 }
   .citybar{
       margin-right:30px; /*30px*/
-  }
-  p.price{
-      text-align: center!important;
   }
 @media screen and (max-width: 996px) {
     .preview {
@@ -84,8 +75,13 @@ img {
             animation-name: opacity;
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
-/* .card {
-  margin-top: 50px;
-  background-color: gray;
-  /*padding: 3em;
-  line-height: 1.5em; } */
+
+
+  @media screen and (max-width: 600px) {
+    .flex{
+      display: block!important;
+    }
+    .productpadding{
+      padding:1em!important;
+    }
+  }

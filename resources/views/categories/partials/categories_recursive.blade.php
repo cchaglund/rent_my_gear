@@ -1,6 +1,6 @@
 
 
-<div class="pb-1 pl-4">
+<div class="pb-1 pl-4" id="hideon">
 	@if ($category->has_child_category() == true)
 		<a data-toggle="collapse" class="category text-primary" href="#category_{{ $category->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ $category->name }}</a>
 	@else
