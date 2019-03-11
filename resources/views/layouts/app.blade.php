@@ -33,14 +33,10 @@
     <div id="app">
         @include('layouts/nav')
 
-        <div class="d-flex">
-            @include('layouts/categorymenu')
-
-            <main class="py-4 ">
-              @yield('content')
-            </main>
-        </div>
+        <main class="py-4">
+            @yield('content')
+        </main>
+        
     </div>
-
 </body>
 </html>
