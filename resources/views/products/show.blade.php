@@ -1,9 +1,9 @@
 @extends('layouts/app')
 @section('content')
     @include('layouts/categorymenu')
-    @include('templates/status')
     <div class="container productbox marginl">
         <div class="card productpadding">
+            @include('templates/status')
             <div class="container-fluid">
                 <div class="wrapper row">
                     <div class="details col-md-12">
