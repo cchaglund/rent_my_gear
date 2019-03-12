@@ -24,9 +24,9 @@ class CreateBookingsTable extends Migration
             $table->string('rec_email');
             $table->string('rec_address');
             $table->string('rec_city');
-            $table->bool('pending');
-            $table->bool('approved');
-            $table->bool('returned');
+            $table->boolean('pending');
+            $table->boolean('approved');
+            $table->boolean('returned');
             $table->timestamps();
         });
     }
