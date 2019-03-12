@@ -29,7 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $categories = Category::where('parent_id', '=', 0)->get();
+        $categories = [];
+        if (Schema::hasTable('categories')) {
+            $categories = Category::where('parent_id', '=', 0)->get();
+        }
         View::share('categories', $categories);
     }
 }
