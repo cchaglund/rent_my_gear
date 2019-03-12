@@ -18,11 +18,11 @@
         @foreach ($bookings as $booking)
             @include('components.booking')
         @endforeach
-
-    <h3>All Gear</h3>
-    @foreach ($products as $product)
-        @include('components.product')
-    @endforeach
+            <h3 class="marginl">All Gear</h3>
+        @foreach ($products as $product)
+            @include('components.product')
+        @endforeach
+    </div>
 
 
 @endsection
@@ -46,5 +46,15 @@
     </div> --}}
 
 <style>
-
+	.marginl{
+        margin-left:14%;;
+    }
+    @media screen and (max-width: 800px){
+		.paddingt{
+			padding-top:20%;
+        }
+        .marginl{
+            margin-left:15px;;
+        }
+}
 </style>

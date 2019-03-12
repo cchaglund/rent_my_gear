@@ -15,6 +15,11 @@ class ProductController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    protected $validation_rules = [
+		'name' => 'required|min:5',
+		'desc' => 'required|min:50',
+	];
+
     /**
      * Display a listing of the resource.
      *
@@ -49,11 +54,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validData = $request->validate($this->validation_rules);
+
         $product = new Product();
 		$product->user_id = Auth::user()->id;
-		$product->name = $request->name;
+		$product->name = $validData['name'];
+		$product->desc = $validData['desc'];
         $product->category_id = $request->category;
-		$product->desc = $request->desc;
 		$product->price = $request->price;
 		$product->src = $request->src;
 		$product->save();
@@ -85,7 +92,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return "Edit page";
+        if ($product->user_id ==  Auth::user()->id) {
+            return view('products/edit', ['product' => $product]);
+        } else {
+            return redirect('/products')->with('warning', 'Access denied you do not own this product!');
+        }
     }
 
     /**
@@ -97,9 +108,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->hidden = !$product->hidden;
-        $product->update();
-        return redirect('/dashboard')->with('status', 'Visibility settings changed');
+        $validData = $request->validate($this->validation_rules);
+
+        $product->name = $validData['name'];
+		$product->desc = $validData['desc'];
+		$product->price = $request->price;
+		$product->src = $request->src;
+		$product->save();
+        return redirect('/products/' . $product->id)->with('status', 'Product updated successfully!');
     }
 
     /**

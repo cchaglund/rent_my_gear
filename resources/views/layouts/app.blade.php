@@ -33,14 +33,22 @@
     <div id="app">
         @include('layouts/nav')
 
-        <div class="d-flex">
-            @include('layouts/categorymenu')
-
-            <main class="py-4 ">
-              @yield('content')
+        <div class="flex margintop widthb">
+            <main>
+                @yield('content')
             </main>
         </div>
     </div>
-
 </body>
 </html>
+
+<style>
+    .margintop{
+        margin-top:7%;
+    }
+    @media screen and (max-width: 888px){
+        .margintop{
+            margin-top:0px;
+        }
+    }
+</style>

@@ -1,7 +1,7 @@
 
     
       <div class="container productbox">
-            <div class="card productpadding">
+            <div class="card productpadding paddingt">
                 <div class="container-fluid">
                     <div class="wrapper row">
                         <div class="preview col-md-6">
@@ -27,11 +27,11 @@
                             <h6><strong>Owner: </strong>{{$product->user->name}}</h6>
                             <h6><strong>City: </strong>{{$product->user->city}}</h6>
                             <h6><strong>Categories: </strong>{{$product->category->name}}</h6>
-                            {{-- <h6><strong>Address: </strong>{{$product->user->address}}</h6> --}}
+                            <h6><strong>Address: </strong>{{$product->user->address}}</h6>
                             
                             <div class="action">
                                 @if ( isset($user) && $user->id == $product->user_id)
-                                    <a href="/products/{{ $product->id }}/edit">
+                                    <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Edit</button>
                                     </a>
                                     <form method="POST" action="/products/{{ $product->id }}">
@@ -54,41 +54,12 @@
                     </div>
                 </div>
             </div>
-
-
-            
         </div>
 
-
-
-
-
-
-
-
-
-{{-- @extends('components.prod_template')
-
-@section('id')
-    {{ $booking->product->id }}
-@endsection
-
-@section('name')
-    {{ $booking->product->name }}
-@endsection
-
-@section('src')
-    {{ $booking->product->src }}
-@endsection
-
-@section('desc')
-    {{ $booking->product->desc }}
-@endsection
-
-@section('price')
-    {{ $booking->product->price }}
-@endsection
-
-@section('booking_details')
-    BOOKING
-@endsection --}}
+<style>
+@media screen and (max-width: 800px){
+		.paddingt{
+			padding-top:20%;
+    }
+  }
+</style>

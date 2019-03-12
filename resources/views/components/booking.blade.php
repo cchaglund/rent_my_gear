@@ -6,7 +6,7 @@
                   <div class="preview col-md-6">
                       
                       <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="{{$booking->product->src}}" /></div>
+                        <div class="tab-pane active" id="pic-1"><img class="productimg" src="{{$booking->product->src}}" /></div>
                       </div>
                       
                   </div>
@@ -59,37 +59,9 @@
       
   </div>
 
-
-
-
-
-
-
-
-
-
-{{-- @extends('components.prod_template')
-
-@section('id')
-	{{ $booking->product->id }}
-@endsection
-
-@section('name')
-	{{ $booking->product->name }}
-@endsection
-
-@section('src')
-	{{ $booking->product->src }}
-@endsection
-
-@section('desc')
-	{{ $booking->product->desc }}
-@endsection
-
-@section('price')
-	{{ $booking->product->price }}
-@endsection
-
-@section('booking_details')
-	BOOKING
-@endsection --}}
+<style>
+    .productimg{
+        width:50%!important;
+        height:50%!important;
+    }
+</style>
