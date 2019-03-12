@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('templates/status')
+    
     @if (isset($message))
         {{ $message }}    
     @endif
     
     <h3>Renting out</h3>
     @foreach ($rented_out_gear as $booking)
-    
         @if ($booking->owner_id == $user->id)
             @include('components.booking')
         @endif
@@ -45,7 +46,5 @@
     </div> --}}
 
 <style>
-	h3{
-        margin-left:10px;
-    }
+
 </style>

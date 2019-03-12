@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use App\Booking;
 use App\Category;
 use App\Product;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -21,7 +22,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('hidden', 0)->get();
         $user = Auth::user();
 
         return view('products/index', [
@@ -51,6 +52,7 @@ class ProductController extends Controller
         $product = new Product();
 		$product->user_id = Auth::user()->id;
 		$product->name = $request->name;
+        $product->category_id = $request->category;
 		$product->desc = $request->desc;
 		$product->price = $request->price;
 		$product->src = $request->src;
@@ -95,7 +97,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->hidden = !$product->hidden;
+        $product->update();
+        return redirect('/dashboard')->with('status', 'Visibility settings changed');
     }
 
     /**

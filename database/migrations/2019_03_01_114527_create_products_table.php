@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('desc');
             $table->float('price', 8, 2);
             $table->text('src');
+            $table->bool('hidden')->default('0');
             $table->bigInteger('rented_to')->unsigned()->nullable();
             $table->timestamps();
         });

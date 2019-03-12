@@ -25,26 +25,29 @@
                       <h5 class="sizes">Renting ends: {{ $booking->end_date }}</h5>
                       <h5 class="sizes">Total price: {{ $booking->totalPrice() }}</h5>
 
-                      <h3 class="sizes">STATUS: {{ $booking->status() }}</h3>
+                      <h3 class="sizes">STATUS: {{ $booking->status() }} on {{substr($booking->updated_at, 0, 10)}}</h3>
 
-                      @if ($booking->owner_id == $user->id)
-                         @if ($booking->status() == 'Gear returned' || $booking->status() == 'Declined')
-                          	<form method="POST" action="/bookings/{{ $booking->id }}">
-                          		{{ csrf_field() }}
- 										{{ method_field('DELETE') }}
-                         		<button type="submit" class="btn btn-primary">Delete this receipt</button>
-                         	</form>                            	
-                         @elseif ($booking->status() == 'Pending loan approval')
-                          	<form method="POST" action="/bookings/{{ $booking->id }}">
-                          		{{ csrf_field() }}
- 										{{ method_field('PATCH') }}
-                         		<button type="submit" class="btn btn-success" name="approve" value="true">Approve loan</button>
-                         		<button type="submit" class="btn btn-success" name="decline" value="true">Decline loan</button>
-                         	</form>                         	
-                         @elseif ($booking->status() == 'Approved!')
-                          	<p>Renter's contact number: {{ $booking->owner()->phone}}</p>                      	
-                         @endif
-                       @endif
+                     @if ($booking->status() == 'Gear returned' || $booking->status() == 'Declined')
+                      	<form method="POST" action="/bookings/{{ $booking->id }}">
+                      		{{ csrf_field() }}
+									           {{ method_field('DELETE') }}
+                     		<button type="submit" class="btn btn-primary">Delete this receipt</button>
+                     	</form>                            	
+                     @elseif ($booking->owner_id == $user->id && $booking->status() == 'Pending loan approval')
+                      	<form method="POST" action="/bookings/{{ $booking->id }}">
+                      		{{ csrf_field() }}
+									           {{ method_field('PATCH') }}
+                     		<button type="submit" class="btn btn-success" name="approve" value="true">Approve loan</button>
+                     		<button type="submit" class="btn btn-success" name="decline" value="true">Decline loan</button>
+                     	</form>                         	
+                     @elseif ($booking->status() == 'Approved!')
+                        @if($booking->owner_id == $user->id)
+                        	<p>Renter's contact number: {{ $booking->rec_phone}}</p>  
+                        @else
+                          <p>Owner's contact number: {{ $booking->owner()->phone}}</p> 
+                        @endif                  	
+                     @endif
+                       
                       
                       
                   </div>

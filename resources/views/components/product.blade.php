@@ -34,6 +34,11 @@
                                     <a href="/products/{{ $product->id }}/edit">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Edit</button>
                                     </a>
+                                    <form method="POST" action="/products/{{ $product->id }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('PATCH') }}
+                                        <button type="submit" name="toggle_hide" class="add-to-cart btn btn-dark" type="button">{{ $product->hidden ? 'Unhide' : 'Hide' }}</button>
+                                    </form>
                                 @else
                                     <a href="/products/{{ $product->id }}">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Book now</button>

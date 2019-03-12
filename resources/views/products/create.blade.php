@@ -23,9 +23,9 @@
 			<!-- Category -->
 			<div class="form-group">
 				<label for="exampleFormControlSelect2">Select a category</label>
-				<select class="form-control" id="exampleFormControlSelect2">
+				<select name="category" class="form-control" id="exampleFormControlSelect2">
 				@foreach ($categories as $category)
-					<option>{{ $category->name }}</option>
+					<option value="{{ $category->id}}">{{ $category->name }}</option>
 				@endforeach
 				</select>
 			</div>
