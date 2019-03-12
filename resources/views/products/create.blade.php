@@ -24,9 +24,70 @@
 			<div class="form-group">
 				<label for="exampleFormControlSelect2">Select a category</label>
 				<select class="form-control" id="exampleFormControlSelect2">
-				@foreach ($categories as $category)
-					<option>{{ $category->name }}</option>
-				@endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				{{-- <option value="">Please select a category</option>
+				@foreach ($category as $category)
+
+					<optgroup label="{{ $category->name }}">
+
+							<option value="{{ $category_sub->id }}">{{ $category_sub->name}}</option>
+					
+					</optgroup>
+				@endforeach --}}
+
+
+				{{-- @if ($category->has_child_category())
+					<div class="collapse" id="category_{{ $category->id }}">
+					@foreach($category->child_categories() as $category)
+						@include('categories.partials.categories_recursive', $category)
+					@endforeach
+					</div>
+				@endif --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</select>
 			</div>
 			<!-- Description -->

@@ -7,7 +7,7 @@
 		@foreach ($products as $product)
 			@include('components.product')
 		@endforeach
-		<a href="/projects">&laquo; Back to all projects</a>
+		<a href="/products">&laquo; Back to all products</a>
 	</div>
 
 @endsection

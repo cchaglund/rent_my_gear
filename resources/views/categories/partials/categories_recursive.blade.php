@@ -17,7 +17,6 @@
 </div>
 
 
-
 {{-- <li><a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
 	@if ($category->has_child_category())
 	    <ul>

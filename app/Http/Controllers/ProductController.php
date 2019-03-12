@@ -42,7 +42,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products/create');
+        $categories_all = Category::all();
+
+
+        return view('products/create', [
+            'categories_all' => $categories_all,
+        ]);
     }
 
     /**
@@ -89,8 +94,13 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $categories_all = Category::all();
+
         if ($product->user_id ==  Auth::user()->id) {
-            return view('products/edit', ['product' => $product]);
+            return view('products/edit', [
+                'product' => $product,
+                'categories_all' => $categories_all,
+            ]);
         } else {
             return redirect('/products')->with('warning', 'Access denied you do not own this product!');
         }
