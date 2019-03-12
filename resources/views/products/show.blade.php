@@ -1,7 +1,8 @@
 @extends('layouts/app')
 @section('content')
     @include('templates/status')
-    <div class="container productbox">
+    @include('layouts/categorymenu')
+    <div class="container productbox paddingt">
         <div class="card productpadding">
             <div class="container-fluid">
                 <div class="wrapper row">
@@ -126,9 +127,6 @@
 @endsection
 
 <style>
-    .productbox{
-        width:80vw!important;
-    }
     .directionbox{
         flex-direction: column!important;
     }
@@ -136,7 +134,12 @@
         width:80%;
     }
     .productimg{
-        height:50%!important;
         width:50%!important;
     }
+
+    @media screen and (max-width: 800px){
+		.paddingt{
+			padding-top:20%;
+    }
+  }
 </style>

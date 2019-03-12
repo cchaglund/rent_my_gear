@@ -14,18 +14,23 @@
 }
 .productbox{
       display: inline-flex!important;
-      flex-direction: column;
+      flex-direction: row;
       width:100%;
       margin-bottom:10px;
   }
 .productpadding{
   background-color: white;
   padding: 3em;
-  line-height: 1.5em
+  line-height: 1.5em;
+  margin-left:16%;
+  width:100%;
 }
 
     .flex{
-        display:flex!important;
+        display:inline-block;
+    }
+    .positionmeny{
+      position:fixed;
     }
 img {
     width: 100%!important;
@@ -43,6 +48,11 @@ img {
 }
   .citybar{
       margin-right:30px; /*30px*/
+  }
+  .navbar-laravel{
+    position: fixed!important;
+    width: 100%; 
+    z-index: 1; 
   }
 @media screen and (max-width: 996px) {
     .preview {
@@ -83,5 +93,11 @@ img {
     }
     .productpadding{
       padding:1em!important;
+    }
+    .productbox{
+      width:100%!important;
+    }
+    .productimg{
+      width:100%!important;
     }
   }

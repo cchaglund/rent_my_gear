@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container widthb paddingt">
     <div class="row justify-content-center">
-        <div class="ml-2 mr-2">
+        <div class="marleft mr-2">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -73,12 +73,18 @@
 @endsection
 
 <style>
-    .ml-2{
+    .widthb{
+        width:100vw!important;
+    }
+    .marleft{
         width:40vw!important;
     }
-    @media screen and (max-width: 800px) {
-        .ml-2{
+    @media screen and (max-width: 900px) {
+        .marleft{
             width:100%!important;
+        }
+        .paddingt{
+			padding-top:20%;
         }
     }
 </style>

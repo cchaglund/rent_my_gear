@@ -62,36 +62,3 @@
         height:50%!important;
     }
 </style>
-
-
-
-
-
-
-
-
-{{-- @extends('components.prod_template')
-
-@section('id')
-	{{ $booking->product->id }}
-@endsection
-
-@section('name')
-	{{ $booking->product->name }}
-@endsection
-
-@section('src')
-	{{ $booking->product->src }}
-@endsection
-
-@section('desc')
-	{{ $booking->product->desc }}
-@endsection
-
-@section('price')
-	{{ $booking->product->price }}
-@endsection
-
-@section('booking_details')
-	BOOKING
-@endsection --}}
