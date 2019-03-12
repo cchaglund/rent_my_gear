@@ -31,7 +31,7 @@
                             
                             <div class="action">
                                 @if ( isset($user) && $user->id == $product->user_id)
-                                    <a href="/products/{{ $product->id }}/edit">
+                                    <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Edit</button>
                                     </a>
                                 @else
