@@ -2,7 +2,7 @@
 @section('content')
     @include('templates/status')
     @include('layouts/categorymenu')
-    <div class="container productbox paddingt marginl">
+    <div class="container productbox marginl">
         <div class="card productpadding">
             <div class="container-fluid">
                 <div class="wrapper row">
@@ -143,6 +143,9 @@
     @media screen and (max-width: 800px){
 		.paddingt{
 			padding-top:20%;
+        }
+        .productpadding{
+            margin-left:0%!important;
+        }
     }
-  }
 </style>
