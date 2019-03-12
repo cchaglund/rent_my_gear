@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex">
-    @include('layouts/categorymenu')
+  @include('layouts/categorymenu')
 
   @include('templates/warning')
   

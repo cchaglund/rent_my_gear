@@ -27,7 +27,7 @@
                             <h6><strong>Owner: </strong>{{$product->user->name}}</h6>
                             <h6><strong>City: </strong>{{$product->user->city}}</h6>
                             <h6><strong>Categories: </strong>{{$product->category->name}}</h6>
-                            {{-- <h6><strong>Address: </strong>{{$product->user->address}}</h6> --}}
+                            <h6><strong>Address: </strong>{{$product->user->address}}</h6>
                             
                             <div class="action">
                                 @if ( isset($user) && $user->id == $product->user_id)
