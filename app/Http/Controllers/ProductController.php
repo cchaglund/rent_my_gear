@@ -89,7 +89,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products/edit', ['product' => $product]);
+        if ($product->user_id ==  Auth::user()->id) {
+            return view('products/edit', ['product' => $product]);
+        } else {
+            return redirect('/products')->with('warning', 'Access denied you do not own this product!');
+        }
     }
 
     /**

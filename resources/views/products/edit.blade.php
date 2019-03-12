@@ -13,7 +13,6 @@
 			</div>
 		@endif
 
-        @if ($product->user_id = Auth::user()->id)
 		<form method="POST" action="/products/{{ $product->id }}">
 
 			@csrf
@@ -50,9 +49,7 @@
 
 			<input type="submit" value="Save Changes" class="btn btn-primary">
 		</form>
-        @else
-        <h2>Access denied<h2>
-        @endif
+        
 		<a href="/products">&laquo; Back to all products</a>
 	</div>
 @endsection
