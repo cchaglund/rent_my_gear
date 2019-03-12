@@ -110,7 +110,23 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // if ($product->bookings->count()) {
+        //     return redirect('/dashboard')->with('status', 'Product has active bookings. Please decline all loans and try again.');
+        // }
+
+        foreach ($product->bookings as $booking) {
+            if ($booking->pending || $booking->approved) {
+                return redirect('/dashboard')->with('status', 'Product has active bookings. Please decline all loans and try again.');    
+            }
+        }
+
+        foreach ($product->bookings as $booking) {
+            $booking->delete();
+        }
+
+        $product->delete();
+
+        return redirect('/dashboard')->with('status', 'Product listing deleted');
     }
 }
 

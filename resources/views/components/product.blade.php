@@ -39,6 +39,11 @@
                                         {{ method_field('PATCH') }}
                                         <button type="submit" name="toggle_hide" class="add-to-cart btn btn-dark" type="button">{{ $product->hidden ? 'Unhide' : 'Hide' }}</button>
                                     </form>
+                                    <form method="POST" action="/products/{{ $product->id }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit" name="delete" class="add-to-cart btn btn-dark" type="button">Delete</button>
+                                    </form>
                                 @else
                                     <a href="/products/{{ $product->id }}">
                                         <button class="add-to-cart btn btn-outline-secondary" type="button">Book now</button>
