@@ -1,7 +1,7 @@
 
     
       <div class="container productbox">
-            <div class="card productpadding">
+            <div class="card productpadding paddingt">
                 <div class="container-fluid">
                     <div class="wrapper row">
                         <div class="preview col-md-6">
@@ -45,3 +45,11 @@
                 </div>
             </div>
         </div>
+
+<style>
+@media screen and (max-width: 800px){
+		.paddingt{
+			padding-top:20%;
+    }
+  }
+</style>

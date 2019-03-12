@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-<div class="flex paddingt">
+<div class="flex">
     @include('layouts/categorymenu')
 
   @foreach ($products as $product)

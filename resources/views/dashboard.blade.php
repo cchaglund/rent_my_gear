@@ -44,7 +44,7 @@
 
 <style>
 	.marginl{
-        margin-left:15px;
+        margin-left:14%;;
     }
     @media screen and (max-width: 800px){
 		.paddingt{

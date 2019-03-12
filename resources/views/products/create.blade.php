@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-	<div class="container widthbox paddingt">
+	<div class="container widthbox paddingt margin">
 		<h1>Rent Out</h1>
 		@if ($errors->any())
 			<div class="alert alert-danger" role="alert">
@@ -52,6 +52,10 @@
 @endsection
 
 <style>
+	.margin{
+		margin-left:20%!important;
+		margin-bottom:20px;
+	}
 	.widthbox{
 		width:40vw!important;
 	}
@@ -61,6 +65,9 @@
 		}
 		.widthbox{
     		width:100%!important;
+		}
+		.margin{
+			margin-left:0%!important;
 		}
 	}	
 </style>
