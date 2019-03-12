@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-	<div class="container mt-3">
+	<div class="container widthbox paddingt margin">
 		<h1>Rent Out</h1>
 		@if ($errors->any())
 			<div class="alert alert-danger" role="alert">
@@ -50,3 +50,24 @@
 		<a href="/products">&laquo; Back to all products</a>
 	</div>
 @endsection
+
+<style>
+	.margin{
+		margin-left:20%!important;
+		margin-bottom:20px;
+	}
+	.widthbox{
+		width:40vw!important;
+	}
+	@media screen and (max-width: 800px){
+		.paddingt{
+			padding-top:20%;
+		}
+		.widthbox{
+    		width:100%!important;
+		}
+		.margin{
+			margin-left:0%!important;
+		}
+	}	
+</style>

@@ -56,3 +56,9 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .navbar{
+        position:fixed!important;
+    }
+</style>

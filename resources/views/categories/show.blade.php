@@ -1,13 +1,24 @@
 @extends('layouts/app')
 
 @section('content')
-
+	@include('layouts/categorymenu')
 	<div class="container">
-		<h1>{{ $category->name }}</h1>
+		<h1 class="marginl">{{ $category->name }}</h1>
 		@foreach ($products as $product)
 			@include('components.product')
 		@endforeach
-		<a href="/projects">&laquo; Back to all projects</a>
+		<a href="/products">&laquo; Back to all products</a>
 	</div>
 
 @endsection
+
+<style>
+	.marginl{
+		margin-left:17%;
+	}
+	@media screen and (max-width: 888px){
+		.paddingt{
+			padding-top:20%;
+		}
+	}
+</style>

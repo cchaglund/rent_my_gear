@@ -23,10 +23,10 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $user = Auth::user();
-        
+
         return view('products/index', [
             'products' => $products,
-            'user' => $user
+            'user' => $user,
         ]);
     }
 
@@ -67,10 +67,11 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $user = Auth::user();
-
+        
         return view('products/show', [
             'product' => $product,
-            'user' => $user
+            'user' => $user,
+            
         ]);
     }
 
