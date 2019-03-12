@@ -50,5 +50,8 @@
 		.paddingt{
 			padding-top:20%;
         }
-    }
+        .marginl{
+            margin-left:15px;;
+        }
+}
 </style>
