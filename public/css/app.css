@@ -10704,6 +10704,14 @@ img {
 }
 
 @media screen and (max-width: 996px) {
+  .positionmeny {
+    position: relative;
+  }
+
+  .productpadding {
+    margin-left: 0px;
+  }
+
   .preview {
     margin-bottom: 20px;
   }

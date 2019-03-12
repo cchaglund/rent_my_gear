@@ -3,7 +3,7 @@
 @section('content')
 <div class="container widthb paddingt">
     <div class="row justify-content-center">
-        <div class="marleft mr-2">
+        <div class="marleft">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -81,7 +81,7 @@
     }
     @media screen and (max-width: 900px) {
         .marleft{
-            width:100%!important;
+            width:80%!important;
         }
         .paddingt{
 			padding-top:20%;

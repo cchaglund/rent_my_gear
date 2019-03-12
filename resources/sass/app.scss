@@ -55,7 +55,13 @@ img {
     z-index: 1; 
   }
 @media screen and (max-width: 996px) {
-    .preview {
+  .positionmeny {
+      position: relative;
+  }
+  .productpadding{
+    margin-left:0px;
+  }
+  .preview {
       margin-bottom: 20px; 
 } }
 .preview-pic {
