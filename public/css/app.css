@@ -10737,7 +10737,7 @@ img {
   animation-duration: 0.3s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .flex {
     display: block !important;
   }

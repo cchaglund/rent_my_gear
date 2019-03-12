@@ -2,3 +2,6 @@
     @each('categories.partials.categories_recursive', $categories, 'category')
 </div>
 
+<style>
+    
+</style>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="ml-2">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -75,3 +75,9 @@
     </div>
 </div>
 @endsection
+
+<style>
+    .ml-2{
+        width:40vw!important;
+    }
+</style>
