@@ -29,7 +29,8 @@ class ProductController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if($user->id== 0){
+
+        if($user == null || $user->id== 0){
             $products = Product::all();
         }else{
             $products = Product::where('hidden', 0)->get();
