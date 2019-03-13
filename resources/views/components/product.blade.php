@@ -30,19 +30,21 @@
 							
 							@include('components.owner_settings')
 
-							@if ( $user != null && $user->id != $product->user_id)
-								<p>
-									<a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapse-{{ $product->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
-										Start Booking
-									</a>
-								</p>
+							@if ( $user == null || $user->id != $product->user_id)
+								@auth
+									<p>
+										<a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapse-{{ $product->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+											Start Booking
+										</a>
+									</p>
+								@endauth
+								@guest
+									<a href="/login">Please login to book</a>
+								@endguest
 							@endif
-
 						</div>
 					</div>
-					@if ( $user != null && $user->id != $product->user_id)
-						@include('components.booking_option')
-					@endif
+					@include('components.booking_option')
 				</div>
 			</div>
 		</div>

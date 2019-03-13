@@ -1,4 +1,4 @@
-@if ( $user->id != $product->user_id)
+@if ( $user == null || $user->id != $product->user_id)
 
 	<div class="collapse" id="collapse-{{ $product->id }}">
 		<div class="card-body">

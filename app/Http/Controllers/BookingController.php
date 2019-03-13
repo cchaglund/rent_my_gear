@@ -40,7 +40,7 @@ class BookingController extends Controller
         $product = Product::find($request->product_id);
 
         if ($product->isBookedBetween($request->startdate, $request->enddate)) {
-            return redirect('products/' . $product->id)->with('status', "Gear not available at that time! Try another date");
+            return redirect('products/' . $product->id)->with('warning', "Gear not available at that time! Try another date");
         }
 
         $product_owner = $product->user_id;
@@ -58,6 +58,7 @@ class BookingController extends Controller
         $booking->rec_city = $request->city;
         $booking->rec_phone = $request->phone;
         $booking->pending = true;
+
         $booking->save();
         return redirect('/dashboard')->with('status', "Booking made! Lean back and wait for the owner's response!");
     }
