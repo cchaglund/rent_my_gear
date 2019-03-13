@@ -1,5 +1,3 @@
-
-
 <div class="pb-1 pl-4" id="hideon">
 	@if ($category->subcategories()->exists())
 
@@ -16,39 +14,11 @@
 		<a class="category text-primary" href="/categories/{{ $category->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ $category->name }}</a>
 
 	@endif
-</div>
-
-
-
-{{-- <li><a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
 	@if ($category->has_child_category())
-	    <ul>
+	    <div class="collapse" id="category_{{ $category->id }}">
 	    @foreach($category->child_categories() as $category)
 	        @include('categories.partials.categories_recursive', $category)
 	    @endforeach
-	    </ul>
-	@endif
-</li> --}}
-
-
-{{-- 
-
-<a data-toggle="collapse" href="#link{{ $key }}" role="button" aria-expanded="false" aria-controls="collapseExample">
-	{{ $category->name }}
-</a>
-
-<div class="collapse border" id="link{{ $key }}">
-	@if ($category->has_child_category())
-		@foreach($category->child_categories() as $key => $category)
-			<br>
-			@include('categories.partials.categories_recursive', [
-				'category' => $category,
-				'key' => $key
-			])
-		@endforeach
+	    </div>
 	@endif
 </div>
-
-
-
- --}}

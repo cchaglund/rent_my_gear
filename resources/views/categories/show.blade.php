@@ -1,5 +1,4 @@
 @extends('layouts/app')
-
 @section('content')
 	@include('layouts/categorymenu')
 	<div class="container">
@@ -7,9 +6,7 @@
 		@foreach ($products as $product)
 			@include('components.product')
 		@endforeach
-
 	</div>
-
 @endsection
 
 <style>

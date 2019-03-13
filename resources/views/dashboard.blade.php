@@ -3,7 +3,6 @@
 @section('content')
     <div class="container widthbox paddingt margin">
         @include('templates/status')
-        
         @if (isset($message))
             {{ $message }}    
         @endif
@@ -12,22 +11,19 @@
             @if ($rented_out_gear->isEmpty())
                 <h6 class="message">Nothing's out at the moment!</h6>
             @endif
-                
             @foreach ($rented_out_gear as $booking)
                 @if ($booking->owner_id == $user->id || $user->id == 0)
                     @include('components.booking')
                 @endif
             @endforeach
         
-             <h2 class="marginl">Your loans</h2>
+            <h2 class="marginl">Your loans</h2>
             @if ($bookings->isEmpty())
                 <h6 class="message">You don't have any loans</h6>
             @endif
-
             @foreach ($bookings as $booking)
                 @include('components.booking')
             @endforeach
-
 
             <h2 class="marginl">All Gear</h2>
             @if ($products->isEmpty())
@@ -36,38 +32,18 @@
             @foreach ($products as $product)
                 @include('components.product')
             @endforeach
+        </div>
     </div>
 @endsection
 
-    {{-- <div class="d-flex justify-content-center">
-        <Dashboard
-            :bookings_string="{{$bookings}}"
-            :products_string="{{$products}}"></Dashboard>
-    </div> --}}
-
-
-
-    {{-- 
-    <div class="d-flex">
-        <div>
-            @include('components.product')
-        </div>
-        <div>
-            @include('components.product')
-        </div>
-    </div> --}}
-
 <style>
-
     .message {
         padding: 1rem;
-        text-align: center;
     }
     .margin{
         margin-left:20%!important;
         margin-bottom:20px;
     }
-
     @media screen and (max-width: 800px){
         .paddingt{
             padding-top:20%;
