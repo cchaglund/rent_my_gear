@@ -65,7 +65,7 @@ class ProductController extends Controller
 		$product->user_id = Auth::user()->id;
 		$product->name = $validData['name'];
 		$product->desc = $validData['desc'];
-        $product->category_id = $request->category;
+        $product->category_id = $request->categories;
         $product->city = $request->city;
 		$product->price = $request->price;
 		$product->src = $request->src;
@@ -125,6 +125,7 @@ class ProductController extends Controller
         
         $product->name = $validData['name'];
 		$product->desc = $validData['desc'];
+        $product->category_id = $request->categories;
 		$product->price = $request->price;
 		$product->src = $request->src;
 		$product->save();

@@ -3,15 +3,7 @@
 @section('content')
 	<div class="container widthbox paddingt margin">
 		<h1>Edit Product: {{ $product->name }}</h1>
-		@if ($errors->any())
-			<div class="alert alert-danger" role="alert">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+		@include('templates/errors')
 
 		<form method="POST" action="/products/{{ $product->id }}">
 
@@ -22,15 +14,25 @@
 				<label for="name">Product Name</label>
 				<input type="text" name="name" id="name" class="form-control" placeholder="Product Name" required value="{{ old('name') ? old('name') : $product->name }}">
 			</div>
+			
 			<!-- Category -->
-			<div class="form-group">
-				<label for="exampleFormControlSelect2">Select a category</label>
-				<select class="form-control" id="exampleFormControlSelect2">
-				@foreach ($categories as $category)
-					<option>{{ $category->name }}</option>
-				@endforeach
-				</select>
-			</div>
+				<div class="form-group">
+					<label for="exampleFormControlSelect2">Select a category</label>
+
+					<select name="categories" class="form-control" id="categories">
+						@foreach ($categories as $category)
+							@if($category->subcategories()->exists())
+								<optgroup label="{{ $category->name }}">
+									@foreach ($category->subcategories as $subcategory)
+										<option value="{{ old('categories') ? old('categories') : $subcategory->name }}">{{ $subcategory->name }}</option>
+									@endforeach
+								</optgroup>
+							@else
+								<option value="{{ old('categories') ? old('categories') : $category->name }}">$category->name</option>
+							@endif
+						@endforeach
+					</select>
+				</div>
 			<!-- Description -->
 			<div class="form-group">
 				<label for="desc">Description</label>
@@ -67,6 +69,11 @@
 	.widthbox{
 		width:40vw!important;
 	}
+
+	.alert-style {
+		margin: 0!important;
+	}
+
 	@media screen and (max-width: 800px){
 		.paddingt{
 			padding-top:20%;
@@ -77,5 +84,5 @@
 		.margin{
 			margin-left:0%!important;
 		}
-	}	
+	}
 </style>

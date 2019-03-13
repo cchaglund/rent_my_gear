@@ -31,8 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         $categories = [];
         if (Schema::hasTable('categories')) {
-            $categories = Category::where('parent_id', '=', 0)->get();
+            $categories = Category::where('parent_id', '=', 0)->orderBy('name')->get();
         }
-        View::share('categories', $categories);
+        View::share([
+            'categories' => $categories, 
+        ]);
     }
 }

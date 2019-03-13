@@ -12,6 +12,10 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function subcategories() {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
+/*
     public function child_categories() {
         return Category::where('parent_id', '=', $this->id)->get();
     }
@@ -20,4 +24,5 @@ class Category extends Model
     {
     	return Category::where('parent_id', $this->id)->exists();
     }
+*/
 }
