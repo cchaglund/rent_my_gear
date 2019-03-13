@@ -37,7 +37,6 @@
 									</a>
 								</p>
 							@endif
-
 						</div>
 					</div>
 					@if ( $user != null && $user->id != $product->user_id || $user != null && $user->id == 0)

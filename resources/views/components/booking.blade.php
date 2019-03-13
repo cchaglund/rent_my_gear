@@ -54,7 +54,7 @@
                         {{ csrf_field() }}
                          {{ method_field('PATCH') }}
                     <button type="submit" class="btn btn-success" name="approve" value="true">Approve loan</button>
-                    <button type="submit" class="btn btn-success" name="decline" value="true">Decline loan</button>
+                    <button type="submit" class="btn btn-danger" name="decline" value="true">Decline loan</button>
                   </form>                           
                  @elseif ($booking->status()['code'] == 'approved')
                     @if($booking->owner_id == $user->id)
