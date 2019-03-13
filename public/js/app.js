@@ -6272,7 +6272,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.gear_nav {\r\n    width: 100vw;\n}\r\n", ""]);
+exports.push([module.i, "\n.gear_nav {\n    width: 100vw;\n}\n", ""]);
 
 // exports
 
@@ -49840,8 +49840,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Program Files (x86)\Ampps\www\rent_my_gear\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Program Files (x86)\Ampps\www\rent_my_gear\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/AMPPS/www/rent_my_gear/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/AMPPS/www/rent_my_gear/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

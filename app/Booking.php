@@ -47,14 +47,26 @@ class Booking extends Model
 
     public function status()
     {
+    	$status = [
+    		'code' => '',
+    		'message' => ''
+    	];
+
     	if ($this->pending) {
-    		return "Pending loan approval";
+    		$status['code'] = 'pending';
+    		$status['message'] = "Pending loan approval";
+    			
     	} else if ($this->approved) {
-    		return "Approved!";
+    		$status['code'] = 'approved';
+    		$status['message'] = "Approved!";
     	} else if ($this->declined) {
-    		return "Declined";
+    		$status['code'] = 'declined';
+    		$status['message'] = "Declined :(";
     	} else {
-    		return "Gear returned";
+    		$status['code'] = 'returned';
+    		$status['message'] = "You've received your gear back!";
     	}
+
+    	return $status;
     }
 }

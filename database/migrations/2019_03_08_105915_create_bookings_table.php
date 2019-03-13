@@ -27,6 +27,7 @@ class CreateBookingsTable extends Migration
             $table->boolean('pending');
             $table->boolean('approved');
             $table->boolean('returned');
+            $table->boolean('declined');
             $table->timestamps();
         });
     }
