@@ -81,9 +81,6 @@
 						@endif
 					</div>
 				</div>
-				<div>
-					<p class="price">total price: <span>${{ $product->price }}</span></p>
-				</div>
 				<div class="form-group row mb-0">
 					<div class="col-md-6">
 						<button type="submit" class="add-to-cart btn btn-outline-secondary">
