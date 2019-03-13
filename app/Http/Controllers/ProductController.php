@@ -82,7 +82,7 @@ class ProductController extends Controller
         }
         $validData = $request->validate($this->validation_rules);
         $product->name = $validData['name'];
-		$product->desc = $validData['desc'];
+        $product->desc = $validData['desc'];
         $product->category_id = $request->categories;
 		$product->price = $request->price;
 		$product->src = $request->src;

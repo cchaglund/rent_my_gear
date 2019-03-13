@@ -24,11 +24,11 @@
 							@if($category->subcategories()->exists())
 								<optgroup label="{{ $category->name }}">
 									@foreach ($category->subcategories as $subcategory)
-										<option value="{{ old('categories') ? old('categories') : $subcategory->name }}">{{ $subcategory->name }}</option>
+										<option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
 									@endforeach
 								</optgroup>
 							@else
-								<option value="{{ old('categories') ? old('categories') : $category->name }}">$category->name</option>
+								<option value="{{ $category->id }}">$category->name</option>
 							@endif
 						@endforeach
 					</select>
