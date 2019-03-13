@@ -18,7 +18,7 @@
 
 				<!-- Category -->
 				<div class="form-group">
-					<label for="exampleFormControlSelect2">Select a category</label>
+					<label for="categories">Select a category</label>
 
 					<select name="categories" class="form-control" id="categories">
 						@foreach ($categories as $category)
