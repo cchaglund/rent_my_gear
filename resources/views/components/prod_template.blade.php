@@ -29,7 +29,7 @@
                             <h6><strong>Category: </strong>{{$product->category->name}}</h6>
                             
                             @include('components.owner_settings')
-                            @if ( $user->id != $product->user_id)
+                            @if ( $user->id != $product->user_id || $user->id == 0)
                                 <p>
                                     <a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                         Start Booking

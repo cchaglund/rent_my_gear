@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use\App\User;
 use App\Booking;
 use App\Category;
 use App\Product;
@@ -27,9 +28,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('hidden', 0)->get();
         $user = Auth::user();
-
+        if($user->id== 0){
+            $products = Product::all();
+        }else{
+            $products = Product::where('hidden', 0)->get();
+        }
         return view('products/index', [
             'products' => $products,
             'user' => $user,
@@ -93,7 +97,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        if ($product->user_id ==  Auth::user()->id) {
+        $user = Auth::user();
+        if ($product->user_id ==  Auth::user()->id|| $user->id == 0) {
             return view('products/edit', ['product' => $product]);
         } else {
             return redirect('/products')->with('warning', 'Access denied you do not own this product!');
