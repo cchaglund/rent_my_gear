@@ -39,7 +39,6 @@
 <style>
     .message {
         padding: 1rem;
-        text-align: center;
     }
     .margin{
         margin-left:20%!important;
