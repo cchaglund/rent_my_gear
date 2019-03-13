@@ -41,8 +41,10 @@
         padding: 1rem;
     }
     .margin{
-        margin-left:20%!important;
         margin-bottom:20px;
+    }
+    .productpadding{
+        margin-left:0!important;
     }
     @media screen and (max-width: 800px){
         .paddingt{
