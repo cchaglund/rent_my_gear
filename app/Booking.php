@@ -28,9 +28,7 @@ class Booking extends Model
     {
     	$start_date = Carbon::create($this->start_date);
     	$end_date = Carbon::create($this->end_date);
-
     	$totalRentalDays = $start_date->diffInDays($end_date);
-
     	return $totalRentalDays;
     }
 
@@ -39,9 +37,7 @@ class Booking extends Model
     	$price = $this->product->price;
     	$start_date = Carbon::create($this->start_date);
     	$end_date = Carbon::create($this->end_date);
-
     	$totalRentalDays = $start_date->diffInDays($end_date);
-
     	return $this->totalDays() * $price;
     }
 
@@ -51,11 +47,9 @@ class Booking extends Model
     		'code' => '',
     		'message' => ''
     	];
-
     	if ($this->pending) {
     		$status['code'] = 'pending';
-    		$status['message'] = "Pending loan approval";
-    			
+    		$status['message'] = "Pending loan approval";	
     	} else if ($this->approved) {
     		$status['code'] = 'approved';
     		$status['message'] = "Approved!";
@@ -66,7 +60,6 @@ class Booking extends Model
     		$status['code'] = 'returned';
     		$status['message'] = "You've received your gear back!";
     	}
-
     	return $status;
     }
 }

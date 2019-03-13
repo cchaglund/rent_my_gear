@@ -18,13 +18,10 @@ class DashboardController extends Controller
         if (Auth::guest()) {
             return redirect('/home');
         }
-
         $user = Auth::user();
-
         $products = $user->products;
         $bookings = $user->bookings;
         $rented_out_gear = $user->rented_out_gear();
-
         return view('dashboard', [
             'user' => $user,
             'products' => $products,

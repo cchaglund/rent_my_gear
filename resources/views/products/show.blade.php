@@ -1,20 +1,14 @@
 @extends('layouts/app')
 
 @section('content')
-<div class="flex">
-  @include('layouts/categorymenu')
-
-  @include('templates/warning')
-  
-  @include('components.product')  
-
-</div>
+    <div class="flex">
+        @include('layouts/categorymenu')
+        @include('templates/warning')
+        @include('components.product')  
+    </div>
 @endsection
 
-
 <style>
-
-
     .directionbox{
         flex-direction: column!important;
     }
@@ -27,7 +21,6 @@
     .productpadding{
         margin-left:20%!important;
     }
-
     @media screen and (max-width: 800px){
 		.paddingt{
 			padding-top:20%;
