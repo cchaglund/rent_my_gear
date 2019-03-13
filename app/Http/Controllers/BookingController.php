@@ -34,6 +34,7 @@ class BookingController extends Controller
         $booking->start_date = $request->startdate;
         $booking->end_date = $request->enddate;
         $booking->rec_address = $request->address;
+        $booking->rec_email = $request->email;
         $booking->rec_city = $request->city;
         $booking->rec_phone = $request->phone;
         $booking->pending = true;
