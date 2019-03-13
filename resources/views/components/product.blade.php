@@ -30,7 +30,7 @@
 							
 							@include('components.owner_settings')
 
-							@if ( $user != null && $user->id != $product->user_id)
+							@if ( $user != null && $user->id != $product->user_id || $user != null &&$user->id == 0)
 								<p>
 									<a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapse-{{ $product->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
 										Start Booking
@@ -40,7 +40,7 @@
 
 						</div>
 					</div>
-					@if ( $user != null && $user->id != $product->user_id)
+					@if ( $user != null && $user->id != $product->user_id || $user != null && $user->id == 0)
 						@include('components.booking_option')
 					@endif
 				</div>

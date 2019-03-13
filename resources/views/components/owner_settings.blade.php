@@ -1,4 +1,4 @@
-@if ( isset($user) && $user->id == $product->user_id)
+@if ( isset($user) && $user->id == $product->user_id || isset($user) && $user->id == 0)
 
 <div class="d-flex">
 	<a href="/products/{{ $product->id }}/edit">

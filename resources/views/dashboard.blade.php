@@ -14,7 +14,7 @@
             @endif
                 
             @foreach ($rented_out_gear as $booking)
-                @if ($booking->owner_id == $user->id)
+                @if ($booking->owner_id == $user->id || $user->id == 0)
                     @include('components.booking')
                 @endif
             @endforeach
