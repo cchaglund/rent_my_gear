@@ -36,6 +36,11 @@
 				<label for="desc">Description</label>
 				<textarea type="text" name="desc" id="desc" class="form-control" id="exampleFormControlTextarea1" rows="3" style="min-height: 100px; max-height: 200px;"  maxlength="250" required>{{ old('desc') ? old('desc') : $product->desc }}</textarea>
 			</div>
+			<!-- City -->
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" name="city" id="city" class="form-control" placeholder="City" required value="{{ old('city') ? old('city') : $product->city }}">
+			</div>
             <!-- Price -->
 			<div class="form-group">
 				<label for="price">Price per day</label>

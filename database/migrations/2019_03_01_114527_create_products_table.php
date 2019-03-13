@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->bigInteger('category_id')->unsigned()->default(1);
             $table->text('desc');
+            $table->string('city');
             $table->float('price', 8, 2);
             $table->text('src');
             $table->boolean('hidden')->default('0');

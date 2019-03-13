@@ -10775,3 +10775,19 @@ img {
   }
 }
 
+.status-approved {
+  color: green;
+}
+
+.status-pending {
+  color: blue;
+}
+
+.status-declined {
+  color: red;
+}
+
+.status-returned {
+  color: black;
+}
+

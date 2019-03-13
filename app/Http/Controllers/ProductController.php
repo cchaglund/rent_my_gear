@@ -61,6 +61,7 @@ class ProductController extends Controller
 		$product->name = $validData['name'];
 		$product->desc = $validData['desc'];
         $product->category_id = $request->category;
+        $product->city = $request->city;
 		$product->price = $request->price;
 		$product->src = $request->src;
 		$product->save();
@@ -108,8 +109,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $validData = $request->validate($this->validation_rules);
+        if ($request->toggle_hide) {
+            $product->hidden = !$product->hidden;
+            $product->update();
+            return redirect('/dashboard')->with('status', 'Visibility settings changed');
+        }
 
+        $validData = $request->validate($this->validation_rules);
+        
         $product->name = $validData['name'];
 		$product->desc = $validData['desc'];
 		$product->price = $request->price;

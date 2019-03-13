@@ -95,6 +95,8 @@ class BookingController extends Controller
     {
         $message = '';
 
+        
+
         $booking->pending = false;
 
         if ($request->decline) {    
