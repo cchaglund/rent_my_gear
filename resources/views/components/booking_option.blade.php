@@ -1,6 +1,6 @@
 @if ( $user->id != $product->user_id)
 
-	<div class="collapse" id="collapseExample">
+	<div class="collapse" id="collapse-{{ $product->id }}">
 		<div class="card-body">
 			  <form method="POST" action="/bookings">
 				  @csrf

@@ -29,9 +29,10 @@
 							<h6><strong>Category: </strong>{{$product->category->name}}</h6>
 							
 							@include('components.owner_settings')
-							@if ( $user->id != $product->user_id)
+
+							@if ( $user != null && $user->id != $product->user_id)
 								<p>
-									<a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+									<a class="add-to-cart btn btn-outline-secondary center-text" data-toggle="collapse" href="#collapse-{{ $product->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
 										Start Booking
 									</a>
 								</p>
@@ -39,7 +40,9 @@
 
 						</div>
 					</div>
-					@include('components.booking_option')
+					@if ( $user != null && $user->id != $product->user_id)
+						@include('components.booking_option')
+					@endif
 				</div>
 			</div>
 		</div>
