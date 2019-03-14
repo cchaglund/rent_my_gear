@@ -16,8 +16,8 @@ class ProductController extends Controller
     }
 
     protected $validation_rules = [
-		'name' => 'required|min:5',
-		'desc' => 'required|min:50',
+		'name' => 'required|min:1',
+		'desc' => 'required|min:10',
     ];
     
     public function index()

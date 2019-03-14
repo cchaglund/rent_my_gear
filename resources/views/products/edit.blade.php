@@ -12,7 +12,7 @@
 			<!-- Title -->
 			<div class="form-group">
 				<label for="name">Product Name</label>
-				<input type="text" name="name" id="name" class="form-control" placeholder="Product Name" required value="{{ old('name') ? old('name') : $product->name }}">
+				<input type="text" maxlength="30" name="name" id="name" class="form-control" placeholder="Product Name" required value="{{ old('name') ? old('name') : $product->name }}">
 			</div>
 			
 			<!-- Category -->
@@ -46,7 +46,7 @@
             <!-- Price -->
 			<div class="form-group">
 				<label for="price">Price per day</label>
-				<input type="text" name="price" id="price" class="form-control" placeholder="Price" required value="{{ old('price') ? old('price') : $product->price }}">
+				<input type="number" name="price" id="price" class="form-control" placeholder="Price" required value="{{ old('price') ? old('price') : $product->price }}">
 			</div>
 			<!-- Image -->
 			<div class="form-group">
