@@ -6,8 +6,8 @@
         @if (isset($message))
             {{ $message }}    
         @endif
-        <div class="paddingt">
-            <h2 class="marginl">Renting out</h2>
+        <div>
+            <h2>Renting out</h2>
             @if ($rented_out_gear->isEmpty())
                 <h6 class="message">Nothing's out at the moment!</h6>
             @endif
@@ -17,7 +17,7 @@
                 @endif
             @endforeach
         
-            <h2 class="marginl">Your loans</h2>
+            <h2>Your loans</h2>
             @if ($bookings->isEmpty())
                 <h6 class="message">You don't have any loans</h6>
             @endif
@@ -25,7 +25,7 @@
                 @include('components.booking')
             @endforeach
 
-            <h2 class="marginl">All Gear</h2>
+            <h2>All Gear</h2>
             @if ($products->isEmpty())
                 <h6 class="message">Why don't you <a href="/products/create">add some products?</a></h6>
             @endif
@@ -35,26 +35,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    .message {
-        padding: 1rem;
-    }
-    .margin{
-        margin-bottom:20px;
-    }
-    .productpadding{
-        margin-left:0!important;
-    }
-    @media screen and (max-width: 800px){
-        .paddingt{
-            padding-top:20%;
-        }
-        .widthbox{
-            width:100%!important;
-        }
-        .margin{
-            margin-left:0%!important;
-        }
-    }   
-</style>

@@ -12,12 +12,15 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+.navbar {
+    position: fixed !important;
+}
 .productbox{
     display: inline-flex!important;
     flex-direction: row;
     width:100%;
     margin-bottom:10px;
-  }
+}
 .productpadding{
     background-color: white;
     padding: 3em;
@@ -28,11 +31,18 @@
 .flex{
     display:inline-block;
 }
+.margintop {
+    margin-top: 7%;
+}
 .positionmeny{
     position:fixed;
 }
 img {
     width: 100%!important;
+}
+.productimg {
+    width: 50% !important;
+    height: 50% !important;
 }
 .citybar{
     margin-right:30px; /*30px*/
@@ -42,12 +52,48 @@ img {
     width: 100%; 
     z-index: 1; 
 }
+.marginl {
+    margin-left: 17%;
+}
+
+.message {
+    padding: 1rem;
+}
+.margin {
+    margin-bottom: 20px;
+}
+.alert-style {
+    margin: 0 !important;
+}
+.directionbox {
+    flex-direction: column !important;
+}
+.bookbar {
+    width: 80%;
+}
+.widthb {
+    width: 100vw !important;
+}
+
+.marleft {
+    width: 40vw !important;
+}
 @media screen and (max-width: 996px) {
     .positionmeny {
         position: relative;
     }
     .productpadding{
+        margin-right:20px;
         margin-left:0px;
+    }
+    .margintop {
+        margin-top: 0px;
+    }
+    .marleft {
+        width: 80% !important;
+    }
+    .paddingt {
+        padding-top: 20%;
     }
 }
 @media screen and (max-width: 800px) {
@@ -62,6 +108,16 @@ img {
     }
     .productimg{
         width:100%!important;
+    }
+    .marginl {
+        margin-left: 5%;
+    }
+    .widthbox {
+        width: 100% !important;
+    }
+    .margin {
+        margin-left: 0% !important;
+        margin-right:20px!important;
     }
 }
 

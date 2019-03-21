@@ -22,14 +22,3 @@
     </div>
 </body>
 </html>
-
-<style>
-    .margintop{
-        margin-top:7%;
-    }
-    @media screen and (max-width: 888px){
-        .margintop{
-            margin-top:0px;
-        }
-    }
-</style>

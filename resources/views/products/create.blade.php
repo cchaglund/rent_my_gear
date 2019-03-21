@@ -3,8 +3,8 @@
 @section('content')
 {{-- @dump($categories)
 @dd($sub_categories) --}}
-	<div class="container widthbox paddingt margin">
-		<div class="paddingt">
+	<div class="container widthbox paddingt">
+		<div class="margin">
 			<h1>Rent Out</h1>
 			@include('templates/errors')
 			<form method="POST" action="/products">
@@ -63,24 +63,3 @@
 
 	</div>
 @endsection
-
-<style>
-	.margin{
-		margin-left:20%!important;
-		margin-bottom:20px;
-	}
-	.widthbox{
-		width:40vw!important;
-	}
-	@media screen and (max-width: 800px){
-		.paddingt{
-			padding-top:20%;
-		}
-		.widthbox{
-    		width:100%!important;
-		}
-		.margin{
-			margin-left:0%!important;
-		}
-	}	
-</style>

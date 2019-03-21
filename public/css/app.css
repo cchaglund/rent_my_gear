@@ -10660,6 +10660,10 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.navbar {
+  position: fixed !important;
+}
+
 .productbox {
   display: inline-flex !important;
   flex-direction: row;
@@ -10679,6 +10683,10 @@ a.text-dark:focus {
   display: inline-block;
 }
 
+.margintop {
+  margin-top: 7%;
+}
+
 .positionmeny {
   position: fixed;
 }
@@ -10687,9 +10695,9 @@ img {
   width: 100% !important;
 }
 
-.preview {
-  display: flex;
-  flex-direction: column;
+.productimg {
+  width: 50% !important;
+  height: 50% !important;
 }
 
 .citybar {
@@ -10703,58 +10711,59 @@ img {
   z-index: 1;
 }
 
+.marginl {
+  margin-left: 17%;
+}
+
+.message {
+  padding: 1rem;
+}
+
+.margin {
+  margin-bottom: 20px;
+}
+
+.alert-style {
+  margin: 0 !important;
+}
+
+.directionbox {
+  flex-direction: column !important;
+}
+
+.bookbar {
+  width: 80%;
+}
+
+.widthb {
+  width: 100vw !important;
+}
+
+.marleft {
+  width: 40vw !important;
+}
+
 @media screen and (max-width: 996px) {
   .positionmeny {
     position: relative;
   }
 
   .productpadding {
+    margin-right: 20px;
     margin-left: 0px;
   }
 
-  .preview {
-    margin-bottom: 20px;
+  .margintop {
+    margin-top: 0px;
   }
-}
 
-.preview-pic {
-  flex-grow: 1;
-}
+  .marleft {
+    width: 80% !important;
+  }
 
-.preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px;
-}
-
-.preview-thumbnail.nav-tabs li {
-  width: 18%;
-  margin-right: 2.5%;
-}
-
-.preview-thumbnail.nav-tabs li img {
-  max-width: 100%;
-  display: block;
-}
-
-.preview-thumbnail.nav-tabs li a {
-  padding: 0;
-  margin: 0;
-}
-
-.preview-thumbnail.nav-tabs li:last-of-type {
-  margin-right: 0;
-}
-
-.tab-content {
-  overflow: hidden;
-}
-
-.tab-content img {
-  width: 100%;
-  -webkit-animation-name: opacity;
-  animation-name: opacity;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  .paddingt {
+    padding-top: 20%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -10772,6 +10781,19 @@ img {
 
   .productimg {
     width: 100% !important;
+  }
+
+  .marginl {
+    margin-left: 5%;
+  }
+
+  .widthbox {
+    width: 100% !important;
+  }
+
+  .margin {
+    margin-left: 0% !important;
+    margin-right: 20px !important;
   }
 }
 

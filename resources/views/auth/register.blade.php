@@ -61,20 +61,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    .widthb{
-        width:100vw!important;
-    }
-    .marleft{
-        width:40vw!important;
-    }
-    @media screen and (max-width: 900px) {
-        .marleft{
-            width:80%!important;
-        }
-        .paddingt{
-			padding-top:20%;
-        }
-    }
-</style>

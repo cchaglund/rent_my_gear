@@ -61,17 +61,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-<style>
-
-
-    .productimg{
-        width:50%!important;
-        height:50%!important;
-    }
-</style>

@@ -6,9 +6,3 @@
         <a href="/products"> All Products</a>
     </div>
 @endsection
-
-<style>
-    .paddingt{
-        padding-top:13%;
-    }
-</style>

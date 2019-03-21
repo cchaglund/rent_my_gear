@@ -9,13 +9,3 @@
 	</div>
 @endsection
 
-<style>
-	.marginl{
-		margin-left:17%;
-	}
-	@media screen and (max-width: 888px){
-		.paddingt{
-			padding-top:20%;
-		}
-	}
-</style>

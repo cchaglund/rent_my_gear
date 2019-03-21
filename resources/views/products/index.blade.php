@@ -9,11 +9,3 @@
         @endforeach
     </div>
 @endsection
-
-<style>
-    @media screen and (max-width: 800px){
-	  	  .paddingt{
-		    	  padding-top:20%;
-        }
-    }
-</style>
