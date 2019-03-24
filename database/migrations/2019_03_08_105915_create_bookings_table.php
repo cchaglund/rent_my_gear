@@ -24,10 +24,10 @@ class CreateBookingsTable extends Migration
             $table->string('rec_email');
             $table->string('rec_address');
             $table->string('rec_city');
-            $table->boolean('pending');
-            $table->boolean('approved');
-            $table->boolean('returned');
-            $table->boolean('declined');
+            $table->boolean('pending')->nullable();
+            $table->boolean('approved')->nullable();
+            $table->boolean('returned')->nullable();
+            $table->boolean('declined')->nullable();
             $table->timestamps();
         });
     }
