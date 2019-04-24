@@ -3,9 +3,7 @@
 @section('content')
     <div class="container widthbox paddingt margin">
         @include('templates/status')
-        @if (isset($message))
-            {{ $message }}    
-        @endif
+        @include('templates/message')
         <div>
             <h2>Renting out</h2>
             @if ($rented_out_gear->isEmpty())
