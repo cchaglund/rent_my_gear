@@ -19,12 +19,12 @@
 				<div class="form-group">
 					<label for="exampleFormControlSelect2">Select a category</label>
 
-					<select name="categories" class="form-control" id="categories">
+					<select name="categories" class="form-control" id="categories" >
 						@foreach ($categories as $category)
 							@if($category->subcategories()->exists())
 								<optgroup label="{{ $category->name }}">
 									@foreach ($category->subcategories as $subcategory)
-										<option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+										<option {{$product->category_id == $subcategory->id ? 'selected' : ''}} value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
 									@endforeach
 								</optgroup>
 							@else
