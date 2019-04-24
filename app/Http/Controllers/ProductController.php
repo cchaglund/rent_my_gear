@@ -80,9 +80,11 @@ class ProductController extends Controller
             $product->update();
             return redirect('/dashboard')->with('status', 'Visibility settings changed');
         }
+
         $validData = $request->validate($this->validation_rules);
         $product->name = $validData['name'];
         $product->desc = $validData['desc'];
+        $product->city =  $request->city;
         $product->category_id = $request->categories;
 		$product->price = $request->price;
 		$product->src = $request->src;
