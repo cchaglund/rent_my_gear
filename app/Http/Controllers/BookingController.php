@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $product = Product::find($request->product_id);
@@ -40,16 +30,6 @@ class BookingController extends Controller
         $booking->pending = true;
         $booking->save();
         return redirect('/dashboard')->with('status', "Booking made! Lean back and wait for the owner's response!");
-    }
-
-    public function show(Booking $booking)
-    {
-        //
-    }
-
-    public function edit(Booking $booking)
-    {
-        //
     }
 
     public function update(Request $request, Booking $booking)
