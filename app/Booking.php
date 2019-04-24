@@ -21,7 +21,7 @@ class Booking extends Model
 
     public function owner()
     {
-    	return User::find($this->owner_id);
+    	return $this->belongsTo(User::class);
     }
 
     public function totalDays()
