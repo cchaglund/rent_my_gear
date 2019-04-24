@@ -28,10 +28,16 @@ class Product extends Model
 
 	public function isBookedBetween($start_date, $end_date)
     {
+        $bookings = $this->bookings();
+
+        if (! $bookings->exists()) {
+            return false;
+        }
+
         $start = date($start_date);
         $end = date($end_date);
-        $start_conflict = Booking::whereBetween('start_date', [$start, $end]);
-        $end_conflict = Booking::whereBetween('end_date', [$start, $end]);
+        $start_conflict = $bookings->whereBetween('start_date', [$start, $end]);
+        $end_conflict = $bookings->whereBetween('end_date', [$start, $end]);
         if ($start_conflict->exists() || $end_conflict->exists() ) {
             return true;
         }
