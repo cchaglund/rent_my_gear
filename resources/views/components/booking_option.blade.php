@@ -29,7 +29,7 @@
 				<div class="form-group row bookbar">
 					<label for="phone" class="col-md-4 col-form-label ">{{ __('Phone') }}</label>
 					<div class="col-md-6">
-						<input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->phone : ''}}" name="phone" value="{{ isset($user) ? $user->name : ''}}" required>
+						<input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ isset($user) ? $user->phone : ''}}" name="phone" value="{{ isset($user) ? $user->phone : ''}}" required>
 						@if ($errors->has('phone'))
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $errors->first('phone') }}</strong>
