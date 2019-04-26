@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     public function rented_out_gear()
     {
-        return $this->hasMany(Booking::class, 'owner_id');
+        return Booking::where('owner_id', $this->id)->get();
     }
 
     use Notifiable;
