@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
+
     public function user()
     {
     	return $this->belongsTo(User::class);
@@ -21,13 +26,13 @@ class Booking extends Model
 
     public function owner()
     {
-    	return $this->belongsTo(User::class);
+        return User::find($this->owner_id);
     }
 
     public function totalDays()
     {
-    	$start_date = Carbon::create($this->start_date);
-    	$end_date = Carbon::create($this->end_date);
+    	$start_date = $this->start_date;
+    	$end_date = $this->end_date;
     	$totalRentalDays = $start_date->diffInDays($end_date);
     	return $totalRentalDays;
     }
@@ -35,8 +40,8 @@ class Booking extends Model
     public function totalPrice()
     {
     	$price = $this->product->price;
-    	$start_date = Carbon::create($this->start_date);
-    	$end_date = Carbon::create($this->end_date);
+        $start_date = $this->start_date;
+        $end_date = $this->end_date;
     	$totalRentalDays = $start_date->diffInDays($end_date);
     	return $this->totalDays() * $price;
     }
